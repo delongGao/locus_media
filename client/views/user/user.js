@@ -1,7 +1,11 @@
 Template.user.helpers({
-	currUser: function () {
-		console.log(this);
-		// var id = this.params._id;
-		// return Meteor.users().findOne({_id: id});
+	currUser: function(){
+		return Meteor.users.findOne({_id: Meteor.userId()});
+	},
+	userEmail: function() {
+		return this.emails[0].address;
+	},
+	ownedPosts: function() {
+		return Posts.find({userId: Meteor.userId()})
 	}
 });

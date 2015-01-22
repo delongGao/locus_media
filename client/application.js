@@ -12,11 +12,11 @@ Meteor.startup(function () {
 	    dashboardRoute: '/',      // mandatory - path to redirect to after successful sign-in
 	    profileRoute: 'user',
 	    passwordSignupFields: 'USERNAME_AND_EMAIL',
-	    showSignupCode: true,
+	    showSignupCode: false,
 	    showOtherLoginServices: false,      // Set to false to hide oauth login buttons on the signin/signup pages. Useful if you are using something like accounts-meld or want to oauth for api access
 	    extraSignUpFields: [{             // Add extra signup fields on the signup page
 	        field: "name",                           // The database property you want to store the data in
-	        name: "This Will Be The Initial Value",  // An initial value for the field, if you want one
+	        name: "Please enter you full name",  // An initial value for the field, if you want one
 	        label: "Full Name",                      // The html lable for the field
 	        placeholder: "John Doe",                 // A placeholder for the field
 	        type: "text",                            // The type of field you want
