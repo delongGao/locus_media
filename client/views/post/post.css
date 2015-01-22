@@ -1,0 +1,13 @@
+.tag {
+	margin: 4px 8px;
+}
+.tag-remove, .fa-plus, .fa-times {
+	margin-left: 20px;
+	cursor: pointer;
+}
+.new-general-tag {
+	display: none;
+}
+.post-control {
+	float: right;
+}

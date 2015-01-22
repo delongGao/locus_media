@@ -1,0 +1,34 @@
+<template name="form">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+	        <h3 class="panel-title">Create new post: </h3>
+	    </div>
+		<!-- error message list -->
+		<ul class="error-message">
+		</ul>
+
+		<form class="input-group">
+		    <!-- <input type="file" name="files" multiple /> -->
+			<div>
+			    <label id="basic-addon1">Title</label>
+	  			<input type="text" class="form-control" placeholder="Title" name="title">
+	  		</div>
+	  		<div>
+			    <label id="basic-addon1">Text</label>
+	  			<textarea name="text" class="form-control" placeholder="Text"></textarea>
+	  		</div>
+	  		<div class="tags-section">
+			    <label id="basic-addon1">Tags</label>
+	  			<input name="locus_tag" type="text" class="form-control" placeholder="Locus tag">
+	  			<input name="locus_literal_tag" type="text" class="form-control" placeholder="Locus literal tag">
+	  			<!-- <button id="new-tag">Add New General Tag</button>
+	  			<input name="tags[]" type="text" class="new-general-tag" placeholder="General Tag"> -->
+	  		</div>
+		    
+
+		    <div>
+		    	<input type="submit" value="Create"/>
+		    </div>
+		</form>
+	</div>
+</template>

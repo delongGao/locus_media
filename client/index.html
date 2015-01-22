@@ -1,0 +1,20 @@
+<template name="index">
+	<head>
+	  	<title>File Uploader</title>
+	</head>
+
+	<body>
+		<div class="container">
+			{{> accountButtons }}	
+		  	{{#if currentUser}}
+		  		<!-- index all the existing posts -->
+		  		{{> posts}}
+		  		<!-- new post form -->
+		  		{{> form}}
+		  	{{else}}
+		  		<h2>You haven't logged in yet</h2>
+		  		<p>Please log in or sign in with locus email.</p>
+		  	{{/if}}
+		</div>
+	</body>
+</template>

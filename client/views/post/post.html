@@ -1,0 +1,33 @@
+<template name="post">
+	<!-- {{#with selectedPost }} -->
+    <div class="post panel panel-default">
+	    <div class="panel-heading">
+	        <h3 class="panel-title">
+	        	{{ title }}
+	        	<span class="post-control {{ isOwner }}"><i class="fa fa-times post-remove"></i></span>
+	        </h3>
+	    </div>
+	        {{ text }}
+	    <div class="panel-footer">
+	    	<span class="tag removable_tag label label-info">
+	            {{tags.locus_tag}}
+	        </span>
+	        <span class="tag removable_tag label label-info">
+	            {{tags.locus_literal_tag}}
+	        </span>
+	    	{{#each tagObjects }}
+	        <span class="tag removable_tag label label-default">
+	            {{tag}}<i class="fa fa-times tag-remove"></i>
+	        </span>
+	        {{/each}}
+
+	        <!-- add new tag field -->
+	        <ul class="horizontal-tags list-group">   
+		        <li class="tag edittag list-group-item">
+		            Create new tag: <input type="text" id="edittag-input" value="" /><i class="fa fa-plus"></i>
+		        </li>
+	        </ul>
+	    </div>
+    </div>
+	<!-- {{/with}} -->
+</template>
