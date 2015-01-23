@@ -2,7 +2,15 @@
 	{{#with currUser}}
 		<div class="container">
 			<h2>Profile page for {{profile.name}}</h2>
-			<ul class="list-group">
+			<ul class="list-group profile">
+				<li class="list-group-item">
+					<span><b>Profile Picture</b></span>: 
+					<img src="{{ profile.imageUrl }}" id="profile-pic" width="300">
+					<!-- image field -->
+					<input type="file" class="form-control" id="file_bag" name="image" >
+					<br>
+					<button type="button" class="btn btn-default" id="change-profile-pic">Change profile picture</button>
+				</li>
 				{{#each profiles}}
 					<li class="list-group-item"><span><b>{{this.key}}</b></span>: {{this.value}}</li>
 				{{/each}}

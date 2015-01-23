@@ -23,3 +23,18 @@ Template.user.helpers({
 		return Posts.find({_id: {$in: likedPostIds}});
 	}
 });
+
+Template.user.events({
+	'click #change-profile-pic': function (evt, tmpl) {
+		$(tmpl.find("#file_bag")).show();
+	},
+	'change #file_bag': function(evt, tmpl) {
+		var files = $("#file_bag")[0].files
+        S3.upload(files,"/" + Meteor.user().username,function(e,r){
+        	console.log(r);
+        	Meteor.users.update({_id: Meteor.userId()},{"$set" : {"profile.imageUrl": r.secure_url}}, function() {
+        		$(tmpl.find("#file_bag")).hide();
+        	});
+        });
+	}
+});

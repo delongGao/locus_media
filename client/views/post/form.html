@@ -10,22 +10,30 @@
 		<form class="input-group">
 		    <!-- <input type="file" name="files" multiple /> -->
 			<div>
-			    <label id="basic-addon1">Title</label>
+			    <label>Title</label>
 	  			<input type="text" class="form-control" placeholder="Title" name="title">
 	  		</div>
 	  		<div>
-			    <label id="basic-addon1">Text</label>
+			    <label>Text</label>
 	  			<textarea name="text" class="form-control" placeholder="Text"></textarea>
 	  		</div>
 	  		<div class="tags-section">
-			    <label id="basic-addon1">Tags</label>
+			    <label>Tags</label>
 	  			<input name="locus_tag" type="text" class="form-control" placeholder="Locus tag">
 	  			<input name="locus_literal_tag" type="text" class="form-control" placeholder="Locus literal tag">
 	  			<!-- <button id="new-tag">Add New General Tag</button>
 	  			<input name="tags[]" type="text" class="new-general-tag" placeholder="General Tag"> -->
 	  		</div>
-		    
 
+	  		<div class="image-section">
+	  			<label>Image</label>
+				<input type="file" class="form-control" id="file_bag" name="image" >
+
+			    {{#each files}}
+					{{percent_uploaded}}
+			    {{/each}}
+	  		</div>
+		    
 		    <div>
 		    	<input type="submit" value="Create"/>
 		    </div>

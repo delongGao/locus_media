@@ -16,24 +16,32 @@ Template.form.events({
 
 		var validated = FormValidator.validate_as_hash(inputs);
 		if (validated["pass_or_not"]) {
-			// insert if validation passed
-			Posts.insert({
-				title 					: titleField.val(),
-				text 					: textField.val(),
-				tags					: 	{
-												locus_tag 			: locus_tag.val(),
-												locus_literal_tag  	: locus_literal_tag.val(),
-												general_tags		:[]
-											},
-				userId 					: Meteor.userId()
-			}, function(err) {
-				if (err) {
-					console.log("error happened");
-				} else {
-					console.log("passed");
-					$(tmpl.find("form"))[0].reset();
-				}
-			});
+			// upload image to S3
+			var files = $("#file_bag")[0].files
+	        S3.upload(files,"/" + Meteor.user().username,function(e,r){
+	            // if upload successful, save post
+	            // insert if validation passed
+				Posts.insert({
+					title 					: titleField.val(),
+					text 					: textField.val(),
+					tags					: 	{
+													locus_tag 			: locus_tag.val(),
+													locus_literal_tag  	: locus_literal_tag.val(),
+													general_tags		:[]
+												},
+					userId 					: Meteor.userId(),
+					imageUrl				: r.secure_url
+				}, function(err) {
+					if (err) {
+						console.log("error happened");
+					} else {
+						console.log("passed");
+						console.log(r);
+						// reset form
+						$(tmpl.find("form"))[0].reset();
+					}
+				});
+	        });
 		} else {
 			$.each(validated["details"], function(key,value) {
 				if (!value) {
@@ -52,5 +60,11 @@ Template.form.events({
 	// 	$(".tags-section").append(copy_input);
 	// 	$(tmpl.find(".new-general-tag"))[0].show();
 	// }
+});
+
+Template.form.helpers({
+	"files": function(){
+    return S3.collection.find();
+  }
 });
 

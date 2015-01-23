@@ -14,6 +14,9 @@ Template.post.helpers({
 		} else {
 			return "hidden";
 		}
+	},
+	imageUrl: function() {
+		return this.imageUrl;
 	}
 });
 
