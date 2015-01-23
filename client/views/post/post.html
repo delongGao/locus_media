@@ -5,6 +5,7 @@
 	        <h3 class="panel-title">
 	        	{{ title }}
 	        	<span class="post-control {{ isOwner }}"><i class="fa fa-times post-remove"></i></span>
+	        	{{> like postId=_id}}
 	        </h3>
 	    </div>
 	        {{ text }}

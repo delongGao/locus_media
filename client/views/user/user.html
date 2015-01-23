@@ -1,18 +1,36 @@
 <template name="user">
 	{{#with currUser}}
 		<div class="container">
-			<h2>Profile page for {{userEmail}}</h2>
+			<h2>Profile page for {{profile.name}}</h2>
+			<ul class="list-group">
+				{{#each profiles}}
+					<li class="list-group-item"><span><b>{{this.key}}</b></span>: {{this.value}}</li>
+				{{/each}}
+			</ul>
 			<hr>
 			<section id="own-posts">
 				<h3>Posts you have created: </h3>
-				{{#each ownedPosts}}
-					{{> post}}
-				{{/each}}
+				{{#if ownedPosts.count }}
+					{{#each ownedPosts}}
+						{{> post}}
+					{{/each}}
+				{{else}}
+					<p>No posts yet!</p>
+				{{/if}}
 			</section>
 			<hr>
 			<section id="loved-posts">
 				<h3>Posts you have loved: </h3>
+				{{#if likedPosts.count }}
+					{{#each likedPosts}}
+						{{> post}}
+					{{/each}}
+				{{else}}
+					<p>No likes yet!</p>
+				{{/if}}
 			</section>
+
+			<div><a href="/">Back</a></div>
 		</div>
 	{{/with}}
 </template>

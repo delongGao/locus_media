@@ -1,7 +1,7 @@
 .tag {
 	margin: 4px 8px;
 }
-.tag-remove, .fa-plus, .fa-times {
+.tag-remove, .fa {
 	margin-left: 20px;
 	cursor: pointer;
 }
