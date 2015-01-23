@@ -17,6 +17,13 @@ Template.post.helpers({
 	},
 	imageUrl: function() {
 		return this.imageUrl;
+	},
+	createrMetaInfo: function() {
+		var result = {
+			"createdBy": Meteor.users.findOne({_id: this.userId}).profile.name,
+			"createdAt": this.createdAt
+		};
+		return result;
 	}
 });
 

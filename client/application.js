@@ -24,10 +24,3 @@ Meteor.startup(function () {
 	    }]
     });
 });
-
-// Meteor.settings(function() {
-// 	Slingshot.config({
-// 		AWSAccessKeyId: 'AKIAIEIA632SOQAQ4PWQ',
-// 		AWSSecretAccessKey: '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'
-// 	})
-// })
