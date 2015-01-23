@@ -11,3 +11,7 @@
 .post-control {
 	float: right;
 }
+
+.post-content {
+	margin: 5px 1em;
+}

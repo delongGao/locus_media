@@ -5,10 +5,15 @@
 	        <h3 class="panel-title">
 	        	{{ title }}
 	        	<span class="post-control {{ isOwner }}"><i class="fa fa-times post-remove"></i></span>
-	        	{{> like postId=_id}}
 	        </h3>
 	    </div>
-	        {{ text }}
+	    <div class="post-content">
+	    	{{ text }}
+	    </div>	      
+		<div class="likes-section">
+			{{> like postId=_id}}
+		</div> 
+
 	    <div class="panel-footer">
 	    	<span class="tag removable_tag label label-info">
 	            {{tags.locus_tag}}
