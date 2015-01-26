@@ -1,6 +1,8 @@
 <template name="user">
 	{{#with currUser}}
 		<div class="container">
+			<div><a href="/">Back</a></div>
+
 			<h2>Profile page for {{profile.name}}</h2>
 			<ul class="list-group profile">
 				<li class="list-group-item">
@@ -17,25 +19,35 @@
 			</ul>
 			<hr>
 			<section id="own-posts">
-				<h3>Posts you have created: </h3>
-				{{#if ownedPosts.count }}
-					{{#each ownedPosts}}
-						{{> post}}
-					{{/each}}
-				{{else}}
-					<p>No posts yet!</p>
-				{{/if}}
+				<h3 class="accordion">Posts you have created: total {{ ownedPosts.count }}
+					<i class="fa fa-angle-double-down"></i>
+					<i class="fa fa-angle-double-up"></i>
+				</h3>
+				<div class="accordion-body">
+					{{#if ownedPosts.count }}
+						{{#each ownedPosts}}
+							{{> post}}
+						{{/each}}
+					{{else}}
+						<p>No posts yet!</p>
+					{{/if}}
+				</div>
 			</section>
 			<hr>
 			<section id="loved-posts">
-				<h3>Posts you have loved: </h3>
-				{{#if likedPosts.count }}
-					{{#each likedPosts}}
-						{{> post}}
-					{{/each}}
-				{{else}}
-					<p>No likes yet!</p>
-				{{/if}}
+				<h3 class="accordion">Posts you have loved: total {{ likedPosts.count }}
+					<i class="fa fa-angle-double-down"></i>
+					<i class="fa fa-angle-double-up"></i>
+				</h3>
+				<div class="accordion-body">
+					{{#if likedPosts.count }}
+						{{#each likedPosts}}
+							{{> post}}
+						{{/each}}
+					{{else}}
+						<p>No likes yet!</p>
+					{{/if}}
+				</div>
 			</section>
 
 			<div><a href="/">Back</a></div>

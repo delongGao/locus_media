@@ -1,0 +1,22 @@
+<template name="search">
+    {{> esInput index="posts" id="search-input" placeholder="Search..." }}
+
+    {{#esEach index="posts" id="search-input"}}
+        {{> post}}
+    {{/esEach}}
+
+    {{> esLoadMoreButton index="posts" id="search-input"}}
+
+    {{#ifEsHasNoResults index="posts" id="search-input"}}
+        <div class="no-results">No results found!</div>
+    {{/ifEsHasNoResults}}
+
+    {{#ifEsInputIsEmpty index="posts" id="search-input"}}
+        <h3 class="default-results">Index of All Posts</h3>
+        {{> posts}}
+    {{/ifEsInputIsEmpty}}
+
+    {{#ifEsIsSearching index="posts" id="search-input"}}
+            <div>Loading...</div>
+    {{/ifEsIsSearching}}
+</template>

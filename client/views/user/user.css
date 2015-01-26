@@ -1,3 +1,7 @@
-.profile #file_bag {
+.profile #file_bag, .accordion-body, .fa-angle-double-up {
 	display: none;
+}
+
+.accordion {
+	cursor: pointer;
 }

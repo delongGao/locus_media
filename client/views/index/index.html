@@ -7,8 +7,16 @@
 		<div class="container">
 			{{> accountButtons }}	
 		  	{{#if currentUser}}
+		  		<section id="search-box">
+		  			<!-- <a href="" id="show-search" class="btn btn-default">Search</a> -->
+		  			
+		  			<div id="searchable-area">
+		  				{{> search}}
+		  			</div>
+		  		</section>
+
 		  		<!-- index all the existing posts -->
-		  		{{> posts}}
+		  		<!-- {{> posts}} -->
 		  		<!-- new post form -->
 		  		{{> form}}
 		  	{{else}}

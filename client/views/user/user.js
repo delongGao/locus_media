@@ -36,5 +36,10 @@ Template.user.events({
         		$(tmpl.find("#file_bag")).hide();
         	});
         });
+	},
+	'click .accordion': function(evt, tmpl) {
+		$(evt.target).siblings('.accordion-body').toggle();
+		$(evt.target).find('.fa-angle-double-down').toggle();
+		$(evt.target).find('.fa-angle-double-up').toggle();
 	}
 });
