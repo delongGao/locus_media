@@ -10,7 +10,7 @@ Meteor.startup(function () {
 	    // termsUrl: '/terms-of-use'         // if set adds link to terms  'you agree to ...' on sign-up page
 	    homeRoute: '/',                    // mandatory - path to redirect to after sign-out
 	    dashboardRoute: '/',      // mandatory - path to redirect to after successful sign-in
-	    profileRoute: 'user',
+	    profileRoute: 'user/' + Meteor.userId(),
 	    passwordSignupFields: 'USERNAME_AND_EMAIL',
 	    showSignupCode: false,
 	    showOtherLoginServices: false,      // Set to false to hide oauth login buttons on the signin/signup pages. Useful if you are using something like accounts-meld or want to oauth for api access

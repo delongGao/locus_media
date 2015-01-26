@@ -21,7 +21,9 @@ Template.post.helpers({
 	createrMetaInfo: function() {
 		var result = {
 			"createdBy": Meteor.users.findOne({_id: this.userId}).profile.name,
-			"createdAt": this.createdAt
+			// TODO: has some problem, not finished
+			// "createdAt": this.createdAt,
+			"creatorId": this.userId
 		};
 		return result;
 	}

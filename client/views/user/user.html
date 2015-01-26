@@ -7,11 +7,13 @@
 			<ul class="list-group profile">
 				<li class="list-group-item">
 					<span><b>Profile Picture</b></span>: 
-					<img src="{{ profile.imageUrl }}" id="profile-pic" width="300">
+					<img src="{{ profile.imageUrl }}" id="profile-pic" width="230">
 					<!-- image field -->
 					<input type="file" class="form-control" id="file_bag" name="image" >
 					<br>
-					<button type="button" class="btn btn-default" id="change-profile-pic">Change profile picture</button>
+					{{#if isCurrentUser}}
+						<button type="button" class="btn btn-default" id="change-profile-pic">Change profile picture</button>
+					{{/if}}
 				</li>
 				{{#each profiles}}
 					<li class="list-group-item"><span><b>{{this.key}}</b></span>: {{this.value}}</li>
@@ -19,7 +21,7 @@
 			</ul>
 			<hr>
 			<section id="own-posts">
-				<h3 class="accordion">Posts you have created: total {{ ownedPosts.count }}
+				<h3 class="accordion">Posts created: total {{ ownedPosts.count }}
 					<i class="fa fa-angle-double-down"></i>
 					<i class="fa fa-angle-double-up"></i>
 				</h3>
@@ -35,7 +37,7 @@
 			</section>
 			<hr>
 			<section id="loved-posts">
-				<h3 class="accordion">Posts you have loved: total {{ likedPosts.count }}
+				<h3 class="accordion">Posts loved: total {{ likedPosts.count }}
 					<i class="fa fa-angle-double-down"></i>
 					<i class="fa fa-angle-double-up"></i>
 				</h3>

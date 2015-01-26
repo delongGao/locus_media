@@ -4,8 +4,8 @@
 	    <div class="panel-heading">
 	        <h3 class="panel-title">
 	        	{{ title }} | 
-	        	Created By: {{createrMetaInfo.createdBy}}
-	        	Created At: {{createrMetaInfo.createdAt}}
+	        	Created By: <a href="user/{{createrMetaInfo.creatorId}}">{{createrMetaInfo.createdBy}}</a>
+	        	<!-- Created At: {{createrMetaInfo.createdAt}} -->
 	        	<span class="post-control {{ isOwner }}"><i class="fa fa-times post-remove"></i></span>
 	        </h3>
 	    </div>
