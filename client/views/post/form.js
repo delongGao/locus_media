@@ -4,14 +4,20 @@ Template.form.events({
 		$(".error-message").empty();
 		var titleField = $(tmpl.find("input[name=title]"));
 		var textField = $(tmpl.find("textarea[name=text]"));
-		var locus_tag = $(tmpl.find("input[name=locus_tag]"));
-		var locus_literal_tag = $(tmpl.find("input[name=locus_literal_tag]"));
+		var cfx = $(tmpl.find("input[name=cfx]"));
+		var efx = $(tmpl.find("input[name=efx]"));
+		// var t 	= $(tmpl.find("input[name=t]"));
+		// var s 	= $(tmpl.find("input[name=s]"));
+		// var c 	= $(tmpl.find("input[name=c]"));
 
 		var inputs = {
-			"Title" : titleField.val(),
-			"Text" : textField.val(),
-			"Locus Tag" : locus_tag.val(),
-			"Locus Literal Tag" : locus_literal_tag.val()
+			"Title" 								: titleField.val(),
+			"Text"	 								: textField.val(),
+			"Code Function Tag" 		: cfx.val(),
+			"English Function Tag" 	: efx.val(),
+			// "Temporal Tag" 					: t.val(),
+			// "Spacial Tag"						: s.val(),
+			// "Comment Tag"						: c.val()
 		};
 
 		var validated = FormValidator.validate_as_hash(inputs);
@@ -25,12 +31,16 @@ Template.form.events({
 					title 					: titleField.val(),
 					text 					: textField.val(),
 					tags					: 	{
-													locus_tag 			: locus_tag.val(),
-													locus_literal_tag  	: locus_literal_tag.val(),
-													general_tags		:[]
+													cfx 								: cfx.val(),
+													efx  								: efx.val(),
+													t 									: '',
+													s 									: '',
+													c 									: '',
+													general_tags				:[]
 												},
 					userId 					: Meteor.userId(),
-					imageUrl				: r.secure_url
+					imageUrl				: r.secure_url,
+					createdAt				: new Date
 				}, function(err) {
 					if (err) {
 						console.log("error happened");
@@ -52,7 +62,14 @@ Template.form.events({
 			});
 			console.log("not pass");
 		}
-	}
+	}, 
+
+	// 'change #tag-type-selector': function(evt, tmpl) {
+	// 	// $('input.tags').hide();
+	// 	var tag_target = $(evt.target).val();
+	// 	var input_to_show = $("input[name=" + tag_target + "]");
+	// 	input_to_show.show();
+	// }
 
 	// 'click #new-tag': function(e,tmpl) {
 	// 	e.preventDefault();

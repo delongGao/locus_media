@@ -19,6 +19,7 @@ ejson@1.0.5
 email@1.0.5
 fastclick@1.0.2
 follower-livedata@1.0.3
+gadicohen:famous-views@0.1.24
 geojson-utils@1.0.2
 handlebars@1.0.2
 html-tools@1.0.3
@@ -34,6 +35,7 @@ iron:location@1.0.7
 iron:middleware-stack@1.0.7
 iron:router@1.0.7
 iron:url@1.0.7
+jag:pince@0.0.5
 joshowens:accounts-entry@1.0.3
 joshowens:simple-form@0.2.2
 jquery@1.0.2
@@ -82,3 +84,4 @@ underscore@1.0.2
 url@1.0.3
 webapp@1.1.5
 webapp-hashing@1.0.2
+wenape:fview-infinitescrollview@1.0.1
