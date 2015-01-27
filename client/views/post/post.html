@@ -56,7 +56,7 @@
 	    </div>
 
 	    <!-- add new tag field -->
-	    <ul class="horizontal-tags list-group">   
+<!-- 	    <ul class="horizontal-tags list-group">   
 	        <li class="tag edittag list-group-item">
 	            Create new tag: 
 	            <select id="tag-type-selector">
@@ -68,8 +68,31 @@
 			    </select>
 	            <input type="text" id="edittag-input" value="" disabled/><i class="fa fa-plus"></i>
 	        </li>
-	    </ul>
-	<!-- </div> -->
+	    </ul> -->
+		<div class="ui fluid mini labeled action input">
+        <div class="ui teal label">
+           <div class="ui dropdown">
+            <i class="tags icon"></i> Tag type
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="header">attribute</div>
+              <div class="item" value="t">Temporal</div>
+              <div class="item" value="s">Spacial</div>
+              <div class="item" value="c">Comment</div>
+              <div class="divider"></div>
+              <div class="item" value="o">Other</div>
+            </div>
+          </div>
+        </div>
+
+        <input type="text" placeholder="add a new tag..."> 
+        <div class="ui label button" id>
+          <i class="add icon"></i>
+        </div> 
+      </div> 
+
+
+
 
 </div>
 
