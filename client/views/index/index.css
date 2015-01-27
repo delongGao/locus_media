@@ -1,3 +1,11 @@
 #searchable-area {
 	/*display: none;*/
 }
+
+
+.container {
+	margin-top: 70px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}

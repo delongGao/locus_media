@@ -5,11 +5,9 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 accounts-password
 less
-mizzao:bootstrap-3
 miguelvalverde:font-awesome-4.1.0
 accounts-ui-unstyled
 accounts-ui
@@ -19,3 +17,4 @@ matb33:collection-hooks
 lepozepo:s3
 matteodem:easy-search
 pcel:loading
+nooitaf:semantic-ui

@@ -1,45 +1,65 @@
 <template name="post">
 	<!-- {{#with selectedPost }} -->
-    <div class="post panel panel-default">
-	    <div class="panel-heading">
+    <!-- <div class="post panel panel-default"> -->
+<!-- 	    <div class="panel-heading">
+
 	        <h3 class="panel-title">
 	        	{{ title }} | 
 	        	Created By: <a href="user/{{createrMetaInfo.creatorId}}">{{createrMetaInfo.createdBy}}</a>
-	        	<!-- Created At: {{createrMetaInfo.createdAt}} -->
 	        	<span class="post-control {{ isOwner }}"><i class="fa fa-times post-remove"></i></span>
 	        </h3>
-	    </div>
-	    <div class="post-content">
+	    </div> -->
+
+<!-- 	    <div class="post-content">
 	    	{{ text }}
 	    </div>
 	    <div>
 	    	<img src="{{ imageUrl }}">
 	    </div>
-	    <hr>
-		<div class="likes-section">
-			{{> like postId=_id}}
-		</div> 
+ -->
 
-	    <div class="panel-footer">
-	    	<span class="tag removable_tag label label-info">
-	            {{tags.locus_tag}}
-	        </span>
-	        <span class="tag removable_tag label label-info">
-	            {{tags.locus_literal_tag}}
-	        </span>
-	    	{{#each tagObjects }}
-	        <span class="tag removable_tag label label-default">
-	            {{tag}}<i class="fa fa-times tag-remove"></i>
-	        </span>
-	        {{/each}}
+   <div class="timelineCard fluid card ui segment">
 
-	        <!-- add new tag field -->
-	        <ul class="horizontal-tags list-group">   
-		        <li class="tag edittag list-group-item">
-		            Create new tag: <input type="text" id="edittag-input" value="" /><i class="fa fa-plus"></i>
-		        </li>
-	        </ul>
-	    </div>
+    <!-- ##### IMAGE ##### -->
+    <div class="ui raised segment">
+      <a class="ui teal ribbon label"><a href="user/{{createrMetaInfo.creatorId}}">{{createrMetaInfo.createdBy}}</a> <span class=" detail">TIMESTAMP</span> </a>
+      <img class="ui centered image" style="padding-top:10px;" src="{{ imageUrl }}">
     </div>
-	<!-- {{/with}} -->
+
+    <a class="header">{{ title }}</a>
+
+    <div class="description">{{ text }}</div>
+    <div class="ui horizontal divider"></div>
+	<div class="likes-section">
+		{{> like postId=_id}}
+	</div> 
+
+	<!-- <div class="panel-footer"> -->
+	    <!-- DIVIDER FOR COMMENTS -->
+    <div class="ui horizontal divider"><i class="circular write icon button userAddComment"></i> </div>
+
+		<span class="tag removable_tag label label-info">
+	        {{tags.locus_tag}}
+	    </span>
+	    <span class="tag removable_tag label label-info">
+	        {{tags.locus_literal_tag}}
+	    </span>
+		{{#each tagObjects }}
+	    <span class="tag removable_tag label label-default">
+	        {{tag}}<i class="fa fa-times tag-remove"></i>
+	    </span>
+	    {{/each}}
+
+	    <!-- add new tag field -->
+	    <ul class="horizontal-tags list-group">   
+	        <li class="tag edittag list-group-item">
+	            Create new tag: <input type="text" id="edittag-input" value="" /><i class="fa fa-plus"></i>
+	        </li>
+	    </ul>
+	<!-- </div> -->
+
+</div>
+
+
+    <!-- </div> -->
 </template>

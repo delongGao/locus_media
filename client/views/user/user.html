@@ -3,21 +3,55 @@
 		<div class="container">
 			<div><a href="/">Back</a></div>
 
-			<h2>Profile page for {{profile.name}}</h2>
+			<!-- <h2>Profile page for {{profile.name}}</h2> -->
 			<ul class="list-group profile">
-				<li class="list-group-item">
+				<!-- li class="list-group-item">
 					<span><b>Profile Picture</b></span>: 
 					<img src="{{ profile.imageUrl }}" id="profile-pic" width="230">
-					<!-- image field -->
+					image field
 					<input type="file" class="form-control" id="file_bag" name="image" >
 					<br>
 					{{#if isCurrentUser}}
 						<button type="button" class="btn btn-default" id="change-profile-pic">Change profile picture</button>
 					{{/if}}
-				</li>
-				{{#each profiles}}
-					<li class="list-group-item"><span><b>{{this.key}}</b></span>: {{this.value}}</li>
-				{{/each}}
+				</li> -->
+		    <div class="ui fluid card">
+
+		      <div class="image">
+		        <img src="{{profile.imageUrl}}" id="profile-pic">
+		        <!-- change prof pic -->
+		        <input type="file" class="form-control" id="file_bag" name="image" >
+		        <br>
+		        {{#if isCurrentUser}}
+		            <button type="button" class="btn btn-default" id="change-profile-pic">Change profile picture</button>
+		        {{/if}}
+		      </div>
+
+<!-- 			{{#each profiles}}
+				<li class="list-group-item"><span><b>{{this.key}}</b></span>: {{this.value}}</li>
+			{{/each}}
+			 -->
+
+		      <div class="content">
+		        <a class="header">{{profile.name}}</a>
+		        <div class="meta">
+		          <!-- <span class="email">asmith@locus.co</span> -->
+		            {{#each profiles}}
+		              <span class="{{this.key}}"> {{this.value}}</span>
+		            {{/each}}
+		        </div>
+<!-- 		        <div class="description">
+		          Alice is an analyist at locus.
+		        </div> -->
+		      </div>
+		      <div class="extra content">
+		        <a>
+		          <i class="file image outline icon"></i>
+		          {{ ownedPosts.count }} Uploads
+		        </a>
+		      </div>
+			</div>
+
 			</ul>
 			<hr>
 			<section id="own-posts">
