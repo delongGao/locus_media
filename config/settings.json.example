@@ -1,0 +1,6 @@
+{
+	"public":{},
+	"S3_KEY": "AWS_KEY",
+	"S3_SECRET": "AWS_SECRET",
+	"S3_BUCKET": "AWS_BUCKET"
+}
