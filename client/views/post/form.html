@@ -2,22 +2,19 @@
 <div class="center uploadCard">
 	<div class="ui fluid card">
 		<div class="content">
-	        <div class="image image-Selection">
-	          <!-- <div class="ui inverted dimmer" id="imageLoader">
-	            <div class="ui text loader">Loading</div>
-	          </div> -->
+<!-- 	        <div class="image image-Selection">
 	          {{#each files}}
 	            {{percent_uploaded}}
 	          {{/each}}
 	          <img id="userUploadPreview" src="#" />
-	        </div>
+	        </div> -->
 		<!-- error message list -->
 		<ul class="error-message">
 		</ul>
 
-		<form class="input-group">
+		<form class="ui form input-group" id="uploadForm">
 		    <!-- <input type="file" name="files" multiple /> -->
-			<div>
+<!-- 			<div>
 			    <label>Title</label>
 	  			<input type="text" class="form-control" placeholder="Title" name="title">
 	  		</div>
@@ -27,28 +24,77 @@
 	  		</div>
 	  		<div class="tags-section">
 			    <label>Tags</label>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 		  		<div>
 		  			<label>Code Function Tag</label>
 		  			<input name="cfx" type="text" class="tags" placeholder="Code Function Tag">
 		  			<label>English Function Tag</label>
+<<<<<<< Updated upstream
 		  			<input name="efx" type="text" class="tags" placeholder="English Function Tag">
 		  		</div>
-	  			<!-- <button id="new-tag">Add New General Tag</button>
-	  			<input name="tags[]" type="text" class="new-general-tag" placeholder="General Tag"> -->
-	  		</div>
+=======
+		  			<input name="efx" type="text" class="tags" placeholder="English Function Tag"> -->
+		  			<!-- <input name="t" type="text" class="tags" placeholder="Temporal Tag">
+		  			<input name="s" type="text" class="tags" placeholder="Spacial Tag">
+		  			<input name="c" type="text" class="tags" placeholder="Comment Tag"> -->
+		  		<!-- </div> -->
+			<div class="tags-section">
+              <div class="field">
+                <div class="ui mini labeled input">
+                  <div class="ui label">
+                    Title
+                  </div>
+                  <input type="text" class="form-control" placeholder="Title" name="title">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui mini labeled input">
+                  <div class="ui label">
+                    Text
+                  </div>
+                  <input type="text" class="form-control" placeholder="Text" name="text">
+                </div>
+              </div>
+
+              <div class="tags-section">
+                <div class="field">
+                  <div class="ui mini labeled input cfx">
+                    <div class="ui label">
+                      Cfx#
+                    </div>
+                    <input name="cfx" type="text" class="tags" placeholder="Code Function Tag...">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui mini labeled input efx" id="TEST">
+                    <div class="ui label">
+                      Efx#
+                    </div>
+                    <input name="efx" type="text" class="tags" placeholder="English Function Tag...">
+                  </div>
+                </div>
+              </div>
+             </div>
 
 	  		<div class="image-section">
 	  			<label>Image</label>
-				<input type="file" class="form-control" id="file_bag" name="image" >
+				<input type="file" class="form-control" id="file_bag" name="cameraInput" capture="camera" accept="image/*" >
 
 			    {{#each files}}
 					{{percent_uploaded}}
 			    {{/each}}
 	  		</div>
 		    
-		    <div>
-		    	<input type="submit" value="Create"/>
+		    <div >
+		    	<input type="submit" class="ui primary button" value="Create"/>
 		    </div>
+
+		<!--     <input class="ui primary button">
+			  <input type="submit" value="Submit"/>
+			</div> -->
 		</form>
 	</div>
 	</div>

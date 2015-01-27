@@ -3,7 +3,7 @@ Template.form.events({
 		e.preventDefault();
 		$(".error-message").empty();
 		var titleField = $(tmpl.find("input[name=title]"));
-		var textField = $(tmpl.find("textarea[name=text]"));
+		var textField = $(tmpl.find("input[name=text]"));
 		var cfx = $(tmpl.find("input[name=cfx]"));
 		var efx = $(tmpl.find("input[name=efx]"));
 		// var t 	= $(tmpl.find("input[name=t]"));
