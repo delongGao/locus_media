@@ -38,18 +38,22 @@
 	<!-- <div class="panel-footer"> -->
 	    <!-- DIVIDER FOR COMMENTS -->
     <div class="ui horizontal divider"><i class="circular write icon button userAddComment"></i> </div>
-
-		<span class="tag removable_tag label label-info">
-	        {{tags.cfx}}
-	    </span>
-	    <span class="tag removable_tag label label-info">
-	        {{tags.efx}}
-	    </span>
-			{{#each tagObjects }}
-	    <span class="tag removable_tag label label-default">
-	        {{tag}}<i class="fa fa-times tag-remove"></i>
-	    </span>
+    	<!-- TAGS -->
+    	<div class="ui tag labels">
+			<div class="tag removable_tag ui label label-info cfx-tag">
+		        {{tags.cfx}}
+		        <i class="delete icon"></i>
+		    </div>
+		    <div class="tag removable_tag ui label label-info efx-tag">
+		        {{tags.efx}}
+		        <i class="delete icon"></i>
+		    </div>
+		{{#each tagObjects }}
+	    <div class="tag removable_tag ui label label-default">
+	        {{tag}}<i class="delete icon"></i>
+	    </div>
 	    {{/each}}
+	    </div>
 
 	    <!-- add new tag field -->
 	    <ul class="horizontal-tags list-group">   
