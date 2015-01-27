@@ -31,9 +31,13 @@ Template.post.helpers({
 
 Template.post.events({
 	// add new tag
+	'change #tag-type-selector': function(evt, tmpl) {
+		$(evt.target).siblings('#edittag-input').prop('disabled', false);
+	},
     'click .fa-plus': function (evt, tmpl) {
     	var value = $(evt.target).siblings("input").val();
-	    if (value.length > 0) {
+    	var tagType = $('#tag-type-selector').val();
+	    if (value.length > 0 && tagType.length > 0) {
 	    	Posts.update(this._id, {$addToSet: {'tags.general_tags': value}});
 	        $(evt.target).siblings("input").val("");
 	    } else {

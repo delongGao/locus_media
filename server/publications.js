@@ -9,3 +9,7 @@ Meteor.publish('posts', function() {
 Meteor.publish('likes', function() {
 	return Likes.find();
 });
+
+Meteor.publish('users', function() {
+	return Users.find();
+});

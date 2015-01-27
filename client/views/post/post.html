@@ -22,8 +22,8 @@
 
     <!-- ##### IMAGE ##### -->
     <div class="ui raised segment">
-      <a class="ui teal ribbon label"><a href="user/{{createrMetaInfo.creatorId}}">{{createrMetaInfo.createdBy}}</a> <span class=" detail">TIMESTAMP</span> </a>
-      <img class="ui centered image" style="padding-top:10px;" src="{{ imageUrl }}">
+    	<a class="ui teal ribbon label"><a href="user/{{createrMetaInfo.creatorId}}">{{createrMetaInfo.createdBy}}</a> <span class=" detail">{{createdAt}}</span> </a>
+    	<img class="ui centered image" style="padding-top:10px;" src="{{ imageUrl }}">
 
     </div>
 
@@ -40,12 +40,12 @@
     <div class="ui horizontal divider"><i class="circular write icon button userAddComment"></i> </div>
 
 		<span class="tag removable_tag label label-info">
-	        {{tags.locus_tag}}
+	        {{tags.cfx}}
 	    </span>
 	    <span class="tag removable_tag label label-info">
-	        {{tags.locus_literal_tag}}
+	        {{tags.efx}}
 	    </span>
-		{{#each tagObjects }}
+			{{#each tagObjects }}
 	    <span class="tag removable_tag label label-default">
 	        {{tag}}<i class="fa fa-times tag-remove"></i>
 	    </span>
@@ -54,7 +54,14 @@
 	    <!-- add new tag field -->
 	    <ul class="horizontal-tags list-group">   
 	        <li class="tag edittag list-group-item">
-	            Create new tag: <input type="text" id="edittag-input" value="" /><i class="fa fa-plus"></i>
+	            Create new tag: 
+	            <select id="tag-type-selector">
+	            	<option value="" disabled selected>Select tag type</option>
+			    	<option id="t-control" value="t">Temporal Tag</option>
+			    	<option id="s-control" value="s">Spacial Tag</option>
+			    	<option id="c-control" value="c">Comment Tag</option>
+			    </select>
+	            <input type="text" id="edittag-input" value="" disabled/><i class="fa fa-plus"></i>
 	        </li>
 	    </ul>
 	<!-- </div> -->
