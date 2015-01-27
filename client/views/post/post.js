@@ -3,21 +3,26 @@ Template.post.helpers({
 		return Posts.findOne({_id: Session.get('selectedPostId')});
 	},
 	tagObjects: function () {
-    	var post_id = this._id;
+    	// var post_id = this._id;
     	// var tmp_tags = this.tags;
-    	// // delete tmp_tags["general_tags"];
-    	// var special_tags = tmp_tags;
-    	// var general_tags = this.tags.general_tags;
+    	// delete tmp_tags["general_tags"];
+    	var special_tags = {};
+    	for (var key in this.tags) {
+    		if (key !== 'general_tags') {
+    			special_tags[key] = this.tags[key]; 
+    		};
+    	};
+    	var general_tags = this.tags.general_tags;
 
-    	// var tagsArray = $.map(special_tags, function(key,value) { return {type: value, tag: key}; } ); 
-    	// // $.each(general_tags, function(key,value) {
-    	// // 	tagsArray.push({type: 'general tag', tag: value});
-    	// // });
+    	var tagsArray = $.map(special_tags, function(key,value) { return {type: value, tag: key}; } ); 
+    	// $.each(general_tags, function(key,value) {
+    	// 	tagsArray.push({type: 'general tag', tag: value});
+    	// });
 
-    	// // return tagsArray;
-    	return _.map(this.tags.general_tags || [], function (tag) {
-	        return {post_id: post_id, tag: tag};
-	    });
+    	return tagsArray;
+    	// return _.map(this.tags.general_tags || [], function (tag) {
+	    //     return {post_id: post_id, tag: tag};
+	    // });
 	},
 	isOwner: function() {
 		if (this.userId == Meteor.userId()) {
