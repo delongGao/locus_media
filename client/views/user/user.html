@@ -1,11 +1,9 @@
 <template name="user">
 	{{> menu}}
 	{{#with currUser}}
-		<div class="container">
-			<div><a href="/">Back</a></div>
+		<div class="container list-group profile">
 
 			<!-- <h2>Profile page for {{profile.name}}</h2> -->
-			<ul class="list-group profile">
 				<!-- li class="list-group-item">
 					<span><b>Profile Picture</b></span>: 
 					<img src="{{ profile.imageUrl }}" id="profile-pic" width="230">
@@ -21,10 +19,10 @@
 		      <div class="image">
 		        <img src="{{profile.imageUrl}}" id="profile-pic">
 		        <!-- change prof pic -->
-		        <input type="file" class="form-control" id="file_bag" name="image" >
+		        <input type="file" class="form-control" id="file_bag" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" >
 		        <br>
 		        {{#if isCurrentUser}}
-		            <button type="button" class="btn btn-default" id="change-profile-pic">Change profile picture</button>
+		            <button type="button" class="ui button" id="change-profile-pic">Change profile picture</button>
 		        {{/if}}
 		      </div>
 
@@ -41,9 +39,7 @@
 		              <span class="{{this.key}}"> {{this.value}}</span>
 		            {{/each}}
 		        </div>
-<!-- 		        <div class="description">
-		          Alice is an analyist at locus.
-		        </div> -->
+
 		      </div>
 		      <div class="extra content">
 		        <a>
@@ -53,7 +49,6 @@
 		      </div>
 			</div>
 
-			</ul>
 			<hr>
 			<section id="own-posts">
 				<h3 class="accordion">Posts created: total {{ ownedPosts.count }}
@@ -87,7 +82,6 @@
 				</div>
 			</section>
 
-			<div><a href="/">Back</a></div>
 		</div>
 	{{/with}}
 </template>
