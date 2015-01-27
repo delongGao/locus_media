@@ -15,3 +15,7 @@
 .post-content {
 	margin: 5px 1em;
 }
+
+a {
+	text-decoration: underline;
+}

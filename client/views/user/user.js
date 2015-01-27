@@ -1,6 +1,8 @@
 Template.user.helpers({
 	currUser: function(){
-		var uid = Router.current().params._id;
+		// because of default user page, uid is not always passed in from paramters
+		// so use current user id as default which exactly covers the default user scenario
+		var uid = (typeof Router.current().params._id === "undefined") ? Meteor.userId() : Router.current().params._id;
 		return Meteor.users.findOne({_id: uid});
 	},
 	isCurrentUser: function() {
@@ -9,7 +11,8 @@ Template.user.helpers({
 	profiles: function() {
 		var result = [
 			{ "key": "full_name", "value" : this.profile.name },
-			{ "key" : "username", "value" : this.username }
+			{ "key" : "username", "value" : this.username },
+			{ "key" : "intro", "value" : this.profile.intro }
 		];
 		if (this._id === Meteor.userId()) {
 			result.push({ "key": "email", "value" : this.emails[0].address });
