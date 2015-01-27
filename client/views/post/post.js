@@ -73,4 +73,11 @@ Template.post.events({
     'click .post-remove': function(evt, tmpl) {
     	Posts.remove({_id: this._id});
     } 
+
+
 });
+
+
+Template.hello.rendered = function(){
+  this.$('.ui.dropdown').dropdown();
+}

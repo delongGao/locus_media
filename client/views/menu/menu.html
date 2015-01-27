@@ -17,18 +17,20 @@
 	      <i class="add circle icon" id="userUploadNew"></i>
 	    </a>
 
-	    <div class="right menu">
+	    {{#if currentUser}}
+		    <div class="right menu">
 
-	      <!-- ORIGINALLY PLANNING A SEARCH BAR, BUT I THINK IT'S BETTER WITH A FULL SCREEN DIMMER -->
-	      <!-- <div class="item">
-	        <div class="ui right icon input mini">
-	          <input type="text" style="width:80px; color:white;"> <i class="inverted search icon"></i>
-	        </div>
-	      </div> -->
+		      <!-- ORIGINALLY PLANNING A SEARCH BAR, BUT I THINK IT'S BETTER WITH A FULL SCREEN DIMMER -->
+		      <!-- <div class="item">
+		        <div class="ui right icon input mini">
+		          <input type="text" style="width:80px; color:white;"> <i class="inverted search icon"></i>
+		        </div>
+		      </div> -->
 
-	      <a href="/sign-out" class="ui item">
-	        Logout
-	      </a>
-	    </div>
+		      <a href="/sign-out" class="ui item">
+		        Logout
+		      </a>
+		    </div>
+		    {{/if}}
 	  </div>
 </template>
