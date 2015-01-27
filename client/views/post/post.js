@@ -15,9 +15,9 @@ Template.post.helpers({
     	var general_tags = this.tags.general_tags;
 
     	var tagsArray = $.map(special_tags, function(key,value) { return {type: value, tag: key}; } ); 
-    	// $.each(general_tags, function(key,value) {
-    	// 	tagsArray.push({type: 'general tag', tag: value});
-    	// });
+    	$.each(general_tags, function(key,value) {
+    		tagsArray.push({type: 'general tag', tag: value});
+    	});
 
     	return tagsArray;
     	// return _.map(this.tags.general_tags || [], function (tag) {
@@ -39,7 +39,8 @@ Template.post.helpers({
 			"createdBy": Meteor.users.findOne({_id: this.userId}).profile.name,
 			// TODO: has some problem, not finished
 			// "createdAt": this.createdAt,
-			"creatorId": this.userId
+			"creatorId": this.userId,
+			"createdAt": this.createdAt ? this.createdAt.toDateString() : ''
 		};
 		return result;
 	}
@@ -83,6 +84,6 @@ Template.post.events({
 });
 
 
-Template.hello.rendered = function(){
+Template.post.rendered = function(){
   this.$('.ui.dropdown').dropdown();
 }
