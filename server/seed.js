@@ -23,8 +23,6 @@ if (Posts.find().count() === 0 && Users.find().count() === 0) {
 		"username" : "testUser"
 	});
 
-	console.log(user);
-
 	for (var i = 0; i <= 20; i++) {
 		Posts.insert({
 					"createdAt" : new Date,
