@@ -2,9 +2,9 @@ Template.like.helpers({
 	isLiked: function (postId) {
 		var likeRecord = userLikePost(Meteor.userId(), postId);
 		if (likeRecord.like_or_not) {
-			return "fa-heart";
+			return "";
 		} else {
-			return "fa-heart-o";
+			return "empty";
 		}
 	}, 
 	printLikeId: function(postId) {
@@ -21,7 +21,7 @@ Template.like.helpers({
 		var likeRecord = userLikePost(Meteor.userId(), postId);
 		if (numLikes == 0) {
 			// no one likes the post
-			return "";
+			return "0 people";
 		} else if (likeRecord.like_or_not) {
 			return "You and " + (numLikes - 1) + " others " ;
 		} else {
@@ -37,16 +37,19 @@ Template.like.helpers({
 
 Template.like.events({
 	'click .like-toggle': function (evt, tmpl) {
+
 		var likeIcon = $(tmpl.find(".like-toggle"));
 
-		var isLiked = likeIcon.hasClass("fa-heart") ? true : false;
+		var isLiked = likeIcon.hasClass("empty") ? false : true;
+
+    console.log(isLiked);
 		// based on whether is liked or not, remove or add record into the Likes collection
 		if (isLiked) {
 			var likeId = likeIcon.attr("data-likeId");
 			Likes.remove({
 				_id: likeId
 			}, function() {
-				likeIcon.removeClass( "fa-heart" ).addClass( "fa-heart-o" );
+				likeIcon.addClass( "empty" );
 				likeIcon.attr("data-likeId", "");
 			});
 		} else {
@@ -55,7 +58,7 @@ Template.like.events({
 				postId: this.postId,
 				createdAt: new Date()
 			}, function() {
-				likeIcon.removeClass( "fa-heart-o" ).addClass( "fa-heart" );
+				likeIcon.removeClass( "empty" );
 			});
 		}
 	}
