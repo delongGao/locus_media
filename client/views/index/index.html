@@ -17,24 +17,22 @@
 <template name="index">
 
   <body>
-
     {{> menu}}
-
     <div class="container">
         <!-- {{ special }} -->
         <!-- {{> accountButtons }} -->
-        {{#if currentUser}}
-          <section id="search-box">
-            <!-- <a href="" id="show-search" class="btn btn-default">Search</a> -->
-            
-            <div id="searchable-area">
-              {{> search}}
-            </div>
-          </section>
+      {{#if currentUser}}
+        <section id="search-box">
+          <!-- <a href="" id="show-search" class="btn btn-default">Search</a> -->
+          
+          <div id="searchable-area">
+            {{> search}}
+          </div>
+        </section>
 
           <!-- new post form -->
           {{> form}}
-        {{else}}
+      {{else}}
           <h2>You haven't logged in yet</h2>
           <p>Please log in or sign in with locus email.</p>
           <div class="ui large buttons">

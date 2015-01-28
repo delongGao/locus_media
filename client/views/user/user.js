@@ -59,3 +59,7 @@ Template.user.events({
 		$(evt.target).find('.fa-angle-double-up').toggle();
 	}
 });
+
+Template.user.rendered = function(){
+  this.$('.accordion').accordion();
+}

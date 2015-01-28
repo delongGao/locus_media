@@ -3,9 +3,13 @@ Template.menu.rendered = function(){
   	$('#uploadDimmer').dimmer('show');
   });
 
-  this.$('#goSearch')
-  .popup({
-    inline   : true,
-    position : 'bottom left',
-  });
+  this.$('#goSearch').popup({
+    popup: $('.custom.popup'),
+    on: 'click'
+  })
 }
+
+// Template.menu.events({
+//   'click #goSearch': function () {
+//     $('')
+// });
