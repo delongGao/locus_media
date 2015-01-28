@@ -1,90 +1,77 @@
 <template name="user">
-	{{> menu}}
-	{{#with currUser}}
-	<div class="container list-group profile">
-		<div class="ui accordion">
-		    <div class="active title">
-		      <i class="dropdown icon"></i>
-		      Your Profile
-		    </div>
-		    <div class="active content">
-		    <div class="ui fluid card">
+  {{> menu}}
+  {{#with currUser}}
+  <div class="container list-group profile">
+    <div class="ui accordion">
+        <div class="active title">
+          <i class="dropdown icon"></i>
+          Your Profile
+        </div>
+        <div class="active content">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="{{profile.imageUrl}}" id="profile-pic">
+              <!-- change prof pic -->
+              <input type="file" class="form-control" id="file_bag" capture="camera" accept="image/*" name="cameraInput" >
+              <br>
+              {{#if isCurrentUser}}
+                <!--   <button type="button" class="ui button" id="change-profile-pic">Change profile picture</button> -->
+                <a class="ui right corner label">
+                  <i class="edit icon" id="change-profile-pic"></i>
+                </a>
+              {{/if}}
+            </div>
 
-		      <div class="image">
-		        <img src="{{profile.imageUrl}}" id="profile-pic">
-		        <!-- change prof pic -->
-		        <input type="file" class="form-control" id="file_bag" capture="camera" accept="image/*" name="cameraInput" >
-		        <br>
-		        {{#if isCurrentUser}}
-		          <!--   <button type="button" class="ui button" id="change-profile-pic">Change profile picture</button> -->
-	              <a class="ui right corner label">
-					<i class="edit icon" id="change-profile-pic"></i>
-				  </a>
-		        {{/if}}
-		      </div>
+            <div class="content">
+              <a class="header">{{profile.name}}</a>
+              <div class="meta">
+                <!-- <span class="email">asmith@locus.co</span> -->
+                  {{#each profiles}}
+                    <span class="{{this.key}}"> {{this.value}}</span>
+                  {{/each}}
+              </div>
+            </div>
 
-		      <div class="content">
-		        <a class="header">{{profile.name}}</a>
-		        <div class="meta">
-		          <!-- <span class="email">asmith@locus.co</span> -->
-		            {{#each profiles}}
-		              <span class="{{this.key}}"> {{this.value}}</span>
-		            {{/each}}
-		        </div>
+            <div class="extra content">
+              <a>
+                <i class="file image outline icon"></i>
+                {{ ownedPosts.count }} Uploads
+              </a>
+            </div>
+          </div>
+        </div>
 
-		      </div>
-		      <div class="extra content">
-		        <a>
-		          <i class="file image outline icon"></i>
-		          {{ ownedPosts.count }} Uploads
-		        </a>
-		      </div>
-			</div>
-			</div>
+        <!-- POST HISTORY -->
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Your {{ ownedPosts.count }} post(s)
+        </div>
+        <div class="content">
+                {{#if ownedPosts.count }}
+                    {{#each ownedPosts}}
+                        {{> post}}
+                    {{/each}}
+                {{else}}
+                    <p>No posts yet!</p>
+                {{/if}}
+        </div>
 
-			<!-- <section id="own-posts"> -->
-			<div class="title">
-		      <i class="dropdown icon"></i>
-		      Your {{ ownedPosts.count }} post(s)
-		    </div>
-				<!-- <h3 class="accordion">Posts created: total {{ ownedPosts.count }}
-					<i class="fa fa-angle-double-down"></i>
-					<i class="fa fa-angle-double-up"></i>
-				</h3> -->
-			<div class="content">
-				<!-- <div class="accordion-body"> -->
-					{{#if ownedPosts.count }}
-						{{#each ownedPosts}}
-							{{> post}}
-						{{/each}}
-					{{else}}
-						<p>No posts yet!</p>
-					{{/if}}
-			</div>
-			<!-- </section> -->
-			<!-- <hr> -->
-			<!-- <section id="loved-posts"> -->
-			<div class="title">
-		      <i class="dropdown icon"></i>
-		      Your {{ likedPosts.count }} high-fived post(s)
-		    </div>
-<!-- 				<h3 class="accordion">Posts loved: total {{ likedPosts.count }}
-					<i class="fa fa-angle-double-down"></i>
-					<i class="fa fa-angle-double-up"></i>
-				</h3> -->
-
-				<!-- <div class="accordion-body"> -->
-				<div class="content">
-					{{#if likedPosts.count }}
-						{{#each likedPosts}}
-							{{> post}}
-						{{/each}}
-					{{else}}
-						<p>No likes yet!</p>
-					{{/if}}
-				</div>
-			<!-- </section> -->
-		</div>
-		</div>
-	{{/with}}
+        <!-- HIGH-FIVE HISTORY -->
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Your {{ likedPosts.count }} high-fived post(s)
+        </div>
+        <div class="content">
+            {{#if likedPosts.count }}
+                {{#each likedPosts}}
+                    {{> post}}
+                {{/each}}
+            {{else}}
+                <p>No likes yet!</p>
+            {{/if}}
+        </div>
+        
+    </div>
+  </div>
+  {{/with}}
 </template>
