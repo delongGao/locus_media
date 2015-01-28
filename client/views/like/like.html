@@ -1,3 +1,12 @@
 <template name="like">
-	<span>{{ shownLiker postId }}<i data-likeId="{{ printLikeId postId }}" class="fa {{ isLiked postId }} like-toggle"></i> this post</span>
+	<!-- <span>{{ shownLiker postId }}<i data-likeId="{{ printLikeId postId }}" class="fa {{ isLiked postId }} like-toggle"></i> this post</span>
+ -->
+  <div class="ui tiny buttons">
+    <div class="ui toggle button"><i class="star icon {{ isLiked postId }} like-toggle" data-likeId="{{ printLikeId postId }}" ></i> </div>
+
+    <div class="or" data-text=" "></div>
+    <div class="ui positive button" id="numLikesField">
+      <div class="likes" > {{ shownLiker postId }}<i class="star icon"></i>this.</div>
+    </div>
+  </div>
 </template>
