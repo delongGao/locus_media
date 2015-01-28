@@ -42,12 +42,16 @@ Template.post.helpers({
 
 Template.post.events({
 	// add new tag
+
 	'change #tag-type-selector': function(evt, tmpl) {
 		$(evt.target).siblings('#edittag-input').prop('disabled', false);
 	},
-    'click .fa-plus': function (evt, tmpl) {
+    'click .addComment': function (evt, tmpl) {
+
     	var value = $(evt.target).siblings("input").val();
+    	console.log($(evt.target).siblings("input"));
     	var tagType = $(evt.target).siblings('#tag-type-selector').val();
+    	console.log($(evt.target).siblings("input"));
 	    if (value.length > 0 && tagType.length > 0) {
 	    	// add general tags
 	    	if (tagType === 'general') {
@@ -74,10 +78,13 @@ Template.post.events({
     	Posts.remove({_id: this._id});
     } 
 
-
 });
 
 
-Template.hello.rendered = function(){
-  this.$('.ui.dropdown').dropdown();
+Template.post.rendered = function(){
+  this.$('.ui.dropdown')
+	  .dropdown({
+	    action: 'activate'
+	  })
+;
 }

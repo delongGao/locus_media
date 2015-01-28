@@ -42,7 +42,7 @@
     	<div class="ui tag labels">
 			<div class="tag removable_tag ui label label-info cfx-tag">
 		        {{tags.cfx}}
-		        <i class="delete icon"></i>
+		        <i class="delete icon tag-remove"></i>
 		    </div>
 		    <div class="tag removable_tag ui label label-info efx-tag">
 		        {{tags.efx}}
@@ -71,27 +71,25 @@
 	    </ul> -->
 		<div class="ui fluid mini labeled action input">
         <div class="ui teal label">
-           <div class="ui dropdown">
-            <i class="tags icon"></i> Tag type
+           <div  class="ui dropdown">
+            <i class="tags icon"></i> <div class="text" id="tag-type-selector">Tag type</div>
             <i class="dropdown icon"></i>
             <div class="menu">
-              <div class="header">attribute</div>
-              <div class="item" value="t">Temporal</div>
-              <div class="item" value="s">Spacial</div>
-              <div class="item" value="c">Comment</div>
-              <div class="divider"></div>
-              <div class="item" value="o">Other</div>
+              <div class="item" id="t-control" value="t">Temporal</div>
+              <div class="item" id="s-control" value="s">Spacial</div>
+              <div class="item" id="c-control" value="c">Comment</div>
+              <div class="item" id="g-control" value="general">General</div>
             </div>
           </div>
+
+
         </div>
 
         <input type="text" placeholder="add a new tag..."> 
-        <div class="ui label button" id>
-          <i class="add icon"></i>
+        <div class="ui label button addComment" >
+          <i class="add icon "></i>
         </div> 
       </div> 
-
-
 
 
 </div>
