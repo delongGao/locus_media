@@ -49,15 +49,20 @@ Template.post.helpers({
 Template.post.events({
 	// add new tag
 
-	'change #tag-type-selector': function(evt, tmpl) {
-		$(evt.target).siblings('#edittag-input').prop('disabled', false);
+	// 'change #tag-type-selector': function(evt, tmpl) {
+	// 	$(evt.target).siblings('#edittag-input').prop('disabled', false);
+	// },
+	'click .dropdown-control': function(evt, tmpl) {
+		$(evt.target).parents(".teal").siblings("input").val('');
+		var selected_type = $(evt.target).attr("value");
+		$(evt.target).parent(".menu").siblings("#tag-type-selector").attr("data-tag-type",selected_type);
 	},
     'click .addComment': function (evt, tmpl) {
 
-    	var value = $(evt.target).siblings("input").val();
-    	console.log($(evt.target).siblings("input"));
-    	var tagType = $(evt.target).siblings('#tag-type-selector').val();
-    	console.log($(evt.target).siblings("input"));
+    	// var value = $(evt.target).siblings("input").val();
+    	var value = $(evt.target).parent(".addComment").siblings('input').val();
+    	// var tagType = $(evt.target).siblings('#tag-type-selector').val();
+    	var tagType = $(evt.target).parent(".addComment").siblings(".teal").find("#tag-type-selector").attr("data-tag-type");
 	    if (value.length > 0 && tagType.length > 0) {
 	    	// add general tags
 	    	if (tagType === 'general') {
