@@ -1,10 +1,10 @@
-Meteor.publish('posts', function() {
-	return Posts.find({deleted: false});
-});
-
-// Meteor.publish("posts", limit, function () {
-//   return Posts.find({}, { sort: { title: 1 }, limit: limit });
+// Meteor.publish('posts', function() {
+// 	return Posts.find({deleted: false});
 // });
+
+Meteor.publish('posts', function(limit) {
+  return Posts.find({deleted: false}, { limit: limit, sort: {createdAt: -1} });
+});
 
 Meteor.publish('likes', function() {
 	return Likes.find();
