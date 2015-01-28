@@ -29,18 +29,20 @@ Template.form.events({
 	            // insert if validation passed
 				Posts.insert({
 					title 					: titleField.val(),
-					text 					: textField.val(),
-					tags					: 	{
-													cfx 								: cfx.val(),
-													efx  								: efx.val(),
-													t 									: '',
-													s 									: '',
-													c 									: '',
-													general_tags				:[]
-												},
+					text 						: textField.val(),
+					tags						: 	{
+														cfx 								: cfx.val(),
+														efx  								: efx.val(),
+														t 									: '',
+														s 									: '',
+														c 									: '',
+														general_tags				:[]
+													},
 					userId 					: Meteor.userId(),
 					imageUrl				: r.secure_url,
-					createdAt				: new Date
+					createdAt				: new Date,
+					deleted  				: false
+
 				}, function(err) {
 					if (err) {
 						console.log("error happened");

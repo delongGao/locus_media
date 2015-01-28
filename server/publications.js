@@ -1,5 +1,5 @@
 Meteor.publish('posts', function() {
-	return Posts.find();
+	return Posts.find({deleted: false});
 });
 
 // Meteor.publish("posts", limit, function () {

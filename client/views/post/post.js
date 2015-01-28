@@ -86,7 +86,7 @@ Template.post.events({
     },
     // remove existing post
     'click .post-remove': function(evt, tmpl) {
-    	Posts.remove({_id: this._id});
+    	Posts.update(this._id, {$set: {deleted: true }});
     } 
 
 });
