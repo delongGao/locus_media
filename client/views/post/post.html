@@ -29,9 +29,9 @@
 		  </a>
     </div>
 
-    <a class="header">{{ title }}</a>
+    <a ><h3 class="ui header">{{ title }}</h3></a>
 
-    <div class="description">{{ text }}</div>
+    <div class="ui subheader">{{ text }}</div>
     <div class="ui horizontal divider"></div>
 	<div class="likes-section">
 		{{> like postId=_id}}
@@ -73,7 +73,7 @@
 	            <input type="text" id="edittag-input" value="" disabled/><i class="fa fa-plus"></i>
 	        </li>
 	    </ul> -->
-		<div class="ui fluid mini labeled action input">
+		<div class="ui fluid mini right icon labeled input">
         <div class="ui teal label">
            <div  class="ui dropdown">
             <i class="tags icon"></i> <div class="text" id="tag-type-selector" data-tag-type="">Tag type</div>
@@ -85,14 +85,13 @@
               <div class="item dropdown-control" id="g-control" value="general">General</div>
             </div>
           </div>
-
-
         </div>
 
         <input type="text" placeholder="add a new tag..."> 
-        <div class="ui label button addComment" >
-          <i class="add icon "></i>
-        </div> 
+        <!-- <div class="ui label button " > -->
+          <i class="add circle addComment link icon"></i>
+        <!-- </div>  -->
+
       </div> 
 
 

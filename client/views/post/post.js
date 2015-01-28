@@ -60,9 +60,9 @@ Template.post.events({
     'click .addComment': function (evt, tmpl) {
 
     	// var value = $(evt.target).siblings("input").val();
-    	var value = $(evt.target).parent(".addComment").siblings('input').val();
+    	var value = $(evt.target).siblings('input').val();
     	// var tagType = $(evt.target).siblings('#tag-type-selector').val();
-    	var tagType = $(evt.target).parent(".addComment").siblings(".teal").find("#tag-type-selector").attr("data-tag-type");
+    	var tagType = $(evt.target).siblings(".teal").find("#tag-type-selector").attr("data-tag-type");
 	    if (value.length > 0 && tagType.length > 0) {
 	    	// add general tags
 	    	if (tagType === 'general') {
