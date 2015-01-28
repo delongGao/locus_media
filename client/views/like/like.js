@@ -49,7 +49,7 @@ Template.like.events({
 			Likes.remove({
 				_id: likeId
 			}, function() {
-				likeIcon.toggleClass( "empty" );
+				likeIcon.addClass( "empty" );
 				likeIcon.attr("data-likeId", "");
 			});
 		} else {
@@ -58,7 +58,7 @@ Template.like.events({
 				postId: this.postId,
 				createdAt: new Date()
 			}, function() {
-				likeIcon.toggleClass( "empty" );
+				likeIcon.removeClass( "empty" );
 			});
 		}
 	}
