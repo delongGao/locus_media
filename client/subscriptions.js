@@ -1,5 +1,8 @@
-Meteor.subscribe('posts');
-// Meteor.subscribe('posts', Session.get('postLimit'))
-Meteor.subscribe('likes');
+// Meteor.subscribe('posts');
+Session.setDefault('postsLimit', Meteor.settings.public.ITEMS_INCREMENT);
+Deps.autorun(function() {
+		Meteor.subscribe('posts', Session.get('postsLimit'));
+});
 
+Meteor.subscribe('likes');
 Meteor.subscribe('users');

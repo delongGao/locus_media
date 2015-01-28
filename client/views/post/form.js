@@ -51,6 +51,8 @@ Template.form.events({
 						console.log(r);
 						// reset form
 						$(tmpl.find("form"))[0].reset();
+						// todo manually reload page
+						location.reload();
 					}
 				});
 	        });
