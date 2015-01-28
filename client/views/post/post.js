@@ -43,7 +43,21 @@ Template.post.helpers({
 			"createdAt": this.createdAt ? this.createdAt.toDateString() : ''
 		};
 		return result;
-	}
+	},
+
+  colorCode: function(type){
+    if (type === "cfx"){
+      return "blue";
+    } else if (type === "efx"){
+        return "red";
+    } else if (type === "t"){
+      return "orange";
+    } else if (type === "s"){
+      return "purple";
+    } else if (type === "c"){
+      return "green";
+    }
+  }
 });
 
 Template.post.events({

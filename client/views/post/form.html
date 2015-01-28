@@ -1,5 +1,6 @@
 <template name="form">
 <div class="ui page dimmer" id="uploadDimmer">
+<div class="content">
 <div class="center uploadCard">
 	<div class="ui fluid card">
 		<div class="content">
@@ -83,10 +84,11 @@
 	  		<div class="image-section">
 	  			<label>Image</label>
 				<input type="file" class="form-control" id="file_bag" name="cameraInput" capture="camera" accept="image/*" >
-
+        <a class="ui circular label">
 			    {{#each files}}
 					{{percent_uploaded}}
 			    {{/each}}
+        </a>
 	  		</div>
 		    
 		    <div >
@@ -100,5 +102,6 @@
 	</div>
 	</div>
 	</div>
+  </div>
 	</div>
 </template>
