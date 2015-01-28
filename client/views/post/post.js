@@ -3,7 +3,7 @@ Template.post.helpers({
 		return Posts.findOne({_id: Session.get('selectedPostId')});
 	},
 	tagObjects: function () {
-    	// var post_id = this._id;
+    	var post_id = this._id;
     	// var tmp_tags = this.tags;
     	// delete tmp_tags["general_tags"];
     	var special_tags = {};
@@ -14,9 +14,9 @@ Template.post.helpers({
     	};
     	var general_tags = this.tags.general_tags;
 
-    	var tagsArray = $.map(special_tags, function(key,value) { return {type: value, tag: key}; } ); 
+    	var tagsArray = $.map(special_tags, function(key,value) { return {type: value, tag: key, post_id: post_id}; } ); 
     	$.each(general_tags, function(key,value) {
-    		tagsArray.push({type: 'general tag', tag: value});
+    		tagsArray.push({type: 'general tag', tag: value, post_id: post_id});
     	});
 
     	return tagsArray;
@@ -82,7 +82,14 @@ Template.post.events({
     },
     // remove existing tag
     'click .tag-remove': function (evt) {
-        Posts.update({_id: this.post_id}, {$pull: {'tags.general_tags': this.tag}});
+    	var tagType = $(evt.target).parent(".tag").attr("data-tag-type");
+    	if (tagType === "general tag") {
+    		Posts.update({_id: this.post_id}, {$pull: {'tags.general_tags': this.tag}});	
+    	} else {
+    		var tmpTagObj = {};
+    		tmpTagObj["tags." + tagType] = '';
+    		Posts.update(this.post_id, {$set: tmpTagObj});	
+    	}
     },
     // remove existing post
     'click .post-remove': function(evt, tmpl) {
