@@ -1,7 +1,10 @@
 <template name="search">
-    {{> esInput index="posts" id="search-input" placeholder="Search..." }}
+  <div class="ui custom popup">
+    {{> esInput index="posts" class="ui input" id="search-input" placeholder="Search..." }}
+  </div>
 
     {{#esEach index="posts" id="search-input"}}
+      <h3 >Results</h3>
         {{> post}}
     {{/esEach}}
 
