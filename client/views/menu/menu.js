@@ -1,6 +1,7 @@
 Template.menu.rendered = function(){
   this.$('#userUploadNew').click(function(){
   	$('#uploadDimmer').dimmer('show');
+    $('#uploadDimmer #file_bag').click();
   });
 
   this.$('#goSearch').popup({
