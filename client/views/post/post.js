@@ -107,9 +107,11 @@ Template.post.events({
     },
     // remove existing post
     'click .post-remove': function(evt, tmpl) {
-    	Posts.update(this._id, {$set: {deleted: true }});
+      var confirmation = confirm('Are you sure you want to delete?');
+      if (confirmation == true) {
+        Posts.update(this._id, {$set: {deleted: true }});  
+      }
     } 
-
 });
 
 
