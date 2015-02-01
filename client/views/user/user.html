@@ -12,8 +12,7 @@
             <div class="image">
               <img src="{{profile.imageUrl}}" id="profile-pic">
               <!-- change prof pic -->
-              <input type="file" class="form-control" id="file_bag" capture="camera" accept="image/*" name="cameraInput" >
-              <br>
+              
               {{#if isCurrentUser}}
                 <!--   <button type="button" class="ui button" id="change-profile-pic">Change profile picture</button> -->
                 <a class="ui right corner label">
@@ -21,6 +20,7 @@
                 </a>
               {{/if}}
             </div>
+            <input type="file" class="form-control filePicker" id="file_bag" capture="camera" accept="image/*" name="cameraInput" >
 
             <div class="content">
               <a class="header">{{profile.name}}</a>
@@ -70,7 +70,7 @@
                 <p>No likes yet!</p>
             {{/if}}
         </div>
-        
+        {{> form}}
     </div>
   </div>
   {{/with}}

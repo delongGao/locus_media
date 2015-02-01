@@ -1,11 +1,15 @@
-.profile #file_bag, .accordion-body, .fa-angle-double-up {
+/*.profile #file_bag, .accordion-body, .fa-angle-double-up {
 	display: none;
+}*/
+
+.filePicker {
+  display: none;
 }
 
 .accordion {
 	cursor: pointer;
 }
 
-a{
+a {
 	text-decoration: none;
 }

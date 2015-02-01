@@ -33,7 +33,8 @@ Template.user.helpers({
 
 Template.user.events({
 	'click #change-profile-pic': function (evt, tmpl) {
-		$(tmpl.find("#file_bag")).show();
+		// $(tmpl.find("#file_bag")).show();
+    $(tmpl.find("#file_bag")).click();
 	},
 	'change #file_bag': function(evt, tmpl) {
 		var files = $("#file_bag")[0].files
@@ -42,7 +43,7 @@ Template.user.events({
 		S3.upload(files,"/" + user.username,function(e,r){
         	console.log(r);
         	Meteor.users.update({_id: user._id},{"$set" : {"profile.imageUrl": r.secure_url}}, function() {
-        		$(tmpl.find("#file_bag")).hide();
+        		// $(tmpl.find("#file_bag")).hide();
         	});
         });
 
