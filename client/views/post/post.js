@@ -76,7 +76,8 @@ Template.post.events({
     	// var value = $(evt.target).siblings("input").val();
     	var value = $(evt.target).siblings('input').val();
     	// var tagType = $(evt.target).siblings('#tag-type-selector').val();
-    	var tagType = $(evt.target).siblings(".teal").find("#tag-type-selector").attr("data-tag-type");
+    	var tagType = $(evt.target).siblings(".tagselect").find("#tag-type-selector").attr("data-tag-type");
+      console.log(tagType);
 	    if (value.length > 0 && tagType.length > 0) {
 	    	// add general tags
 	    	if (tagType === 'general') {
