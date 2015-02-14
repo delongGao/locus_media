@@ -22,7 +22,7 @@
 
     <!-- ##### IMAGE ##### -->
     <div class="ui raised segment">
-    	<a class="ui teal ribbon label"><a href="user/{{createrMetaInfo.creatorId}}">{{createrMetaInfo.createdBy}}</a> <span class=" detail">{{createrMetaInfo.createdAt}}</span> </a>
+    	<a class="ui orange ribbon label"><a href="user/{{createrMetaInfo.creatorId}}">{{createrMetaInfo.createdBy}}</a> <span class=" detail">{{createrMetaInfo.createdAt}}</span> </a>
     	<img class="ui centered image" style="padding-top:10px;" src="{{ imageUrl }}">
 		  <a class="ui right corner label post-control {{ isOwner }}">
 				<i class="close icon post-remove"></i>
@@ -79,7 +79,7 @@
             <i class="tags icon"></i> <div class="text" id="tag-type-selector" data-tag-type="">Tag type</div>
             <i class="dropdown icon"></i>
             <div class="menu">
-              <div class="item dropdown-control" id="t-control" value="t">Temporal</div>
+              <div class="item dropdown-control" id="t-control" value="t"> <i class="temporaltag icon"> </i>Temporal</div>
               <div class="item dropdown-control" id="s-control" value="s">Spacial</div>
               <div class="item dropdown-control" id="c-control" value="c">Comment</div>
               <div class="item dropdown-control" id="g-control" value="general">General</div>
