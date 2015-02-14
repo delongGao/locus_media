@@ -36,3 +36,12 @@ div.ui.fluid.card{
 .gentag {
   content: url("http://anniej.mit.edu/locuslens/gentag.png");
 }
+
+
+.engtag {
+  content: url("http://anniej.mit.edu/locuslens/engtag.png");
+}
+
+.codetag{
+  content: url("http://anniej.mit.edu/locuslens/codetag.png");
+}

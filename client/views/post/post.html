@@ -53,7 +53,7 @@
 			{{#each tagObjects }}
 				{{#if tag}}
 				    <div class="tag removable_tag ui label label-default {{type}} {{colorCode type}}" data-tag-type="{{type}}">
-				        {{tag}}<i class="delete icon tag-remove"></i>
+				        <i class="{{tagtype type}} icon"></i> {{tag}}<i class="delete icon tag-remove"></i>
 				    </div>
 				{{/if}}
 		    {{/each}}

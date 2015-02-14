@@ -51,11 +51,25 @@ Template.post.helpers({
     } else if (type === "efx"){
         return "red";
     } else if (type === "t"){
-      return "orange";
+      return "teal";
     } else if (type === "s"){
       return "purple";
     } else if (type === "c"){
       return "green";
+    }
+  },
+
+  tagtype: function(type){
+    if (type === "cfx"){
+      return "codetag";
+    } else if (type === "efx"){
+        return "engtag";
+    } else if (type === "t"){
+      return "temporaltag";
+    } else if (type === "s"){
+      return "geotag";
+    } else if (type === "c"){
+      return "comment";
     }
   }
 });
