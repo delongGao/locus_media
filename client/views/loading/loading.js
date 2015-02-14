@@ -2,7 +2,7 @@ Template.loading.rendered = function () {
 	if ( ! Session.get('loadingSplash') ) {
 	    this.loading = window.pleaseWait({
 	    	logo: '/images/locus_spinner.gif',
-	    	backgroundColor: '#1abc9c',
+	    	backgroundColor: '#fff',
 	    	loadingHtml: message + spinner
 	    });
     	Session.set('loadingSplash', true); // just show loading splash once
