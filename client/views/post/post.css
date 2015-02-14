@@ -24,14 +24,15 @@ div.ui.fluid.card{
     padding: 10px;
     margin-top: 20px;
 }
-/*
-.temporaltag.icon {
-    background-image: url("http://anniej.mit.edu/locuslens/temporaltag.png");
-    background-position: center center;
-    z-index: 1000;
-}
-*/
+
 .temporaltag {
   content: url("http://anniej.mit.edu/locuslens/temporaltag.png");
 }
 
+.geotag {
+  content: url("http://anniej.mit.edu/locuslens/geotag.png");
+}
+
+.gentag {
+  content: url("http://anniej.mit.edu/locuslens/gentag.png");
+}
