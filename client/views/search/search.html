@@ -1,5 +1,16 @@
 <template name="search">
   <div class="ui custom popup">
+    <!-- search type drop down -->
+    <select id="search_tag_type">
+        <option value="all">All Tags</option>
+        <option value="comment">Comment Tag</option>
+        <option value="cfx">Code Functional Tag</option>
+        <option value="efx">English Functional Tag</option>
+        <option value="general">General Tags</option>
+        <option value="s">Spacial Tag</option>
+        <option value="t">Temporal Tag</option>
+    </select>
+
     {{> esInput index="posts" class="ui input" id="search-input" placeholder="Search..." }}
   </div>
 
