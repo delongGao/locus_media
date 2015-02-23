@@ -3,19 +3,19 @@
     <!-- search type drop down -->
     <select id="search_tag_type">
         <option value="all">All Tags</option>
-        <option value="comment">Comment Tag</option>
-        <option value="cfx">Code Functional Tag</option>
-        <option value="efx">English Functional Tag</option>
-        <option value="general">General Tags</option>
-        <option value="s">Spacial Tag</option>
-        <option value="t">Temporal Tag</option>
+        <option value="title">Title</option>
+        <option value="tags.c">Comment Tag</option>
+        <option value="tags.cfx">Code Functional Tag</option>
+        <option value="tags.efx">English Functional Tag</option>
+        <option value="tags.general_tags">General Tags</option>
+        <option value="tags.s">Spacial Tag</option>
+        <option value="tags.t">Temporal Tag</option>
     </select>
 
     {{> esInput index="posts" class="ui input" id="search-input" placeholder="Search..." }}
   </div>
-
     {{#esEach index="posts" id="search-input"}}
-      <h3 >Results</h3>
+        <h3 >Results</h3>
         {{> post}}
     {{/esEach}}
 
