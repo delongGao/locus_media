@@ -2,8 +2,8 @@ Template.form.events({
 	'submit form': function (e,tmpl) {
 		e.preventDefault();
 		$(".error-message").empty();
-		var titleField = $(tmpl.find("input[name=title]"));
-		var textField = $(tmpl.find("input[name=text]"));
+		// var titleField = $(tmpl.find("input[name=title]"));
+		// var textField = $(tmpl.find("input[name=text]"));
 		var cfx = $(tmpl.find("input[name=cfx]"));
 		var efx = $(tmpl.find("input[name=efx]"));
 		// var t 	= $(tmpl.find("input[name=t]"));
@@ -11,8 +11,8 @@ Template.form.events({
 		// var c 	= $(tmpl.find("input[name=c]"));
 
 		var inputs = {
-			"Title" 								: titleField.val(),
-			"Text"	 								: textField.val(),
+			// "Title" 								: titleField.val(),
+			// "Text"	 								: textField.val(),
 			"Code Function Tag" 		: cfx.val(),
 			"English Function Tag" 	: efx.val(),
 			// "Temporal Tag" 					: t.val(),
@@ -28,8 +28,8 @@ Template.form.events({
 	            // if upload successful, save post
 	            // insert if validation passed
 				Posts.insert({
-					title 					: titleField.val(),
-					text 						: textField.val(),
+					// title 					: titleField.val(),
+					// text 						: textField.val(),
 					tags						: 	{
 														cfx 								: cfx.val(),
 														efx  								: efx.val(),

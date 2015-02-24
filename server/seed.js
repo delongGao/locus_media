@@ -36,8 +36,6 @@ if (Posts.find().count() === 0 && Users.find().count() === 0) {
 						"s" : "Mars",
 						"t" : i + " month"
 					},
-					"text" : "this is the " + i + " post",
-					"title" : "Hello " + i,
 					"userId" : user
 				});
 	};
