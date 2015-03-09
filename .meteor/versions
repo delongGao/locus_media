@@ -45,7 +45,7 @@ less@1.0.12
 livedata@1.0.12
 localstorage@1.0.2
 logging@1.0.6
-matb33:collection-hooks@0.7.9
+matb33:collection-hooks@0.7.11
 matteodem:easy-search@1.4.13
 meteor@1.1.4
 meteor-platform@1.2.1
@@ -56,7 +56,7 @@ mobile-status-bar@1.0.2
 mongo@1.0.11
 mongo-livedata@1.0.7
 mrt:underscore-string-latest@2.3.3
-nooitaf:semantic-ui@1.10.2
+nooitaf:semantic-ui@1.10.4
 npm-bcrypt@0.7.7
 observe-sequence@1.0.4
 ordered-dict@1.0.2
