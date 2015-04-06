@@ -1,36 +1,36 @@
 <template name="search">
-  <div class="ui custom popup">
-    <!-- search type drop down -->
-    <label for="search_tag_type">Select field to search</label>
-    <select id="search_tag_type">
-        <option value="all">All Fields</option>
-        <option value="tags.c">Comment Tag</option>
-        <option value="tags.cfx">Code Functional Tag</option>
-        <option value="tags.efx">English Functional Tag</option>
-        <option value="tags.general_tags">General Tags</option>
-        <option value="tags.s">Spacial Tag</option>
-        <option value="tags.t">Temporal Tag</option>
-    </select>
+    <div class="ui custom popup">
+        <!-- search type drop down -->
+        <label for="search_tag_type">Select field to search</label>
+        <select id="search_tag_type">
+            <option value="all">All Fields</option>
+            <option value="c">Comment Tag</option>
+            <option value="cfx">Code Functional Tag</option>
+            <option value="efx">English Functional Tag</option>
+            <option value="general">General Tags</option>
+            <option value="s">Spacial Tag</option>
+            <option value="t">Temporal Tag</option>
+        </select>
 
-    {{> esInput index="posts" class="ui input" id="search-input" placeholder="Search..." }}
-  </div>
-    {{#esEach index="posts" id="search-input"}}
+        {{> esInput index="tags" class="ui input" id="search-input" placeholder="Search..." }}
+    </div>
+    {{#esEach index="tags" id="search-input"}}
         <h3 >Results</h3>
         {{> post}}
     {{/esEach}}
 
-    {{> esLoadMoreButton index="posts" id="search-input"}}
+    {{> esLoadMoreButton index="tags" id="search-input"}}
 
-    {{#ifEsHasNoResults index="posts" id="search-input"}}
+    {{#ifEsHasNoResults index="tags" id="search-input"}}
         <div class="no-results">No results found!</div>
     {{/ifEsHasNoResults}}
 
-    {{#ifEsInputIsEmpty index="posts" id="search-input"}}
+    {{#ifEsInputIsEmpty index="tags" id="search-input"}}
         <h3 class="default-results">Index of All Posts</h3>
         {{> posts}}
     {{/ifEsInputIsEmpty}}
 
-    {{#ifEsIsSearching index="posts" id="search-input"}}
+    {{#ifEsIsSearching index="tags" id="search-input"}}
         <div>Loading...</div>
     {{/ifEsIsSearching}}
 </template>

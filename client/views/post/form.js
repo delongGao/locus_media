@@ -2,13 +2,8 @@ Template.form.events({
 	'submit form': function (e,tmpl) {
 		e.preventDefault();
 		$(".error-message").empty();
-		// var titleField = $(tmpl.find("input[name=title]"));
-		// var textField = $(tmpl.find("input[name=text]"));
 		var cfx = $(tmpl.find("input[name=cfx]"));
 		var efx = $(tmpl.find("input[name=efx]"));
-		// var t 	= $(tmpl.find("input[name=t]"));
-		// var s 	= $(tmpl.find("input[name=s]"));
-		// var c 	= $(tmpl.find("input[name=c]"));
 
 		var inputs = {
 			// "Title" 								: titleField.val(),
@@ -28,16 +23,6 @@ Template.form.events({
 	            // if upload successful, save post
 	            // insert if validation passed
 				Posts.insert({
-					// title 					: titleField.val(),
-					// text 						: textField.val(),
-					// tags						: 	{
-					// 									cfx 								: cfx.val(),
-					// 									efx  								: efx.val(),
-					// 									t 									: '',
-					// 									s 									: '',
-					// 									c 									: '',
-					// 									general_tags				:[]
-					// 								},
 					userId 					: Meteor.userId(),
 					imageUrl				: r.secure_url,
 					createdAt				: new Date,

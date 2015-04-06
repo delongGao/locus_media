@@ -5,7 +5,7 @@
     <div class="ui accordion">
         <div class="active title">
           <i class="dropdown icon"></i>
-          Your Profile
+          {{ username }}'s Profile
         </div>
         <div class="active content">
           <div class="ui fluid card">
@@ -44,7 +44,7 @@
         <!-- POST HISTORY -->
         <div class="title">
           <i class="dropdown icon"></i>
-          Your {{ ownedPosts.count }} post(s)
+          {{ username }}'s {{ ownedPosts.count }} post(s)
         </div>
         <div class="content">
                 {{#if ownedPosts.count }}
@@ -59,7 +59,7 @@
         <!-- HIGH-FIVE HISTORY -->
         <div class="title">
           <i class="dropdown icon"></i>
-          Your {{ likedPosts.count }} high-fived post(s)
+          {{ username }}'s {{ likedPosts.count }} high-fived post(s)
         </div>
         <div class="content">
             {{#if likedPosts.count }}
