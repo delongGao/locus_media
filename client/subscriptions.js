@@ -6,3 +6,4 @@ Deps.autorun(function() {
 
 Meteor.subscribe('likes');
 Meteor.subscribe('users');
+Meteor.subscribe('tags');

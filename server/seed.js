@@ -23,20 +23,26 @@ if (Posts.find().count() === 0 && Users.find().count() === 0) {
 		"username" : "testUser"
 	});
 
-	for (var i = 0; i <= 20; i++) {
-		Posts.insert({
+	for (var i = 0; i <= 5; i++) {
+		var post_id = Posts.insert({
 					"createdAt" : new Date,
 					"deleted" : false,
 					"imageUrl" : "/images/default.png",
-					"tags" : {
-						"c" : "this is comment",
-						"cfx" : "2.1.3.Bii",
-						"efx" : "Information",
-						"general_tags" : ['general 1','general 2'],
-						"s" : "Mars",
-						"t" : i + " month"
-					},
 					"userId" : user
 				});
+
+		// create tags for this post
+		// $.each(['cfx','efx'], function(index,type) {
+		var seed_tag_types = ['cfx','efx'];
+		for (var j = 0; j < seed_tag_types.length; j++) {
+			var type = seed_tag_types[j];
+			Tags.insert({
+				"type"		: type,
+				"content" 	: type === 'cfx' ? '2.1.3.Bii' : 'Information',
+				"userId"	: user,
+				"postId"	: post_id,
+				deleted 	: false 
+			})
+		};
 	};
 }

@@ -30,24 +30,31 @@ Template.form.events({
 				Posts.insert({
 					// title 					: titleField.val(),
 					// text 						: textField.val(),
-					tags						: 	{
-														cfx 								: cfx.val(),
-														efx  								: efx.val(),
-														t 									: '',
-														s 									: '',
-														c 									: '',
-														general_tags				:[]
-													},
+					// tags						: 	{
+					// 									cfx 								: cfx.val(),
+					// 									efx  								: efx.val(),
+					// 									t 									: '',
+					// 									s 									: '',
+					// 									c 									: '',
+					// 									general_tags				:[]
+					// 								},
 					userId 					: Meteor.userId(),
 					imageUrl				: r.secure_url,
 					createdAt				: new Date,
 					deleted  				: false
 
-				}, function(err) {
+				}, function(err, recordId) {
 					if (err) {
-						console.log("error happened");
+						console.log("error happened for posts");
 					} else {
-						console.log("passed");
+						console.log("posts passed");
+
+						var tags = $('input.tags');
+						var tagSuccess = true;
+						$.each(tags, function(index, tag) {
+							tagSuccess = insertTags(tag, recordId, tagSuccess);
+						});
+
 						console.log(r);
 						// reset form
 						$(tmpl.find("form"))[0].reset();
@@ -55,6 +62,8 @@ Template.form.events({
 						location.reload();
 					}
 				});
+
+
 	        });
 		} else {
 			$.each(validated["details"], function(key,value) {
@@ -88,4 +97,25 @@ Template.form.helpers({
     return S3.collection.find();
   }
 });
+
+// update tags
+function insertTags(tagParams, postId, successFlag) {
+	var tagDom = $(tagParams);
+
+	Tags.insert({
+		type 		: tagDom.attr("name"),
+		content : tagDom.val(),
+		userId 	: Meteor.userId(),
+		postId 	: postId,
+		deleted : false
+	}, function(err) {
+		if (err) {
+			console.log("Error occured for tags: " + err.toString());
+			return false;
+		} else {
+			console.log("Tags passed");
+			return true;
+		}
+	})
+}
 

@@ -1,2 +1,5 @@
 server/uploader_bak.js
 config/settings.json
+config/settings.json.orig
+credentials.csv
+rootkey.csv

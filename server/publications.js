@@ -13,3 +13,7 @@ Meteor.publish('likes', function() {
 Meteor.publish('users', function() {
 	return Users.find();
 });
+
+Meteor.publish('tags', function() {
+	return Tags.find({deleted: false});
+});
