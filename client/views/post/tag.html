@@ -1,8 +1,10 @@
 <template name="tag">
-	<div class="tag removable_tag ui label label-default {{type}} {{colorCode type}}" data-tag-type="{{type}}">
-	    <i class="{{tagtype type}} icon"></i> {{tag}} | {{ owerObj.username }}
+	<div class="list removable_tag ui {{type}} {{colorCode type}}" data-tag-type="{{type}}">
+	  <div class="item">
+      <i class="{{tagtype type}} ui avatar image"></i> {{tag}} | {{ owerObj.username }}
 	    {{ #if isOwner }}
 	    	<i class="delete icon tag-remove"></i>
 	    {{ /if }}
+    </div>
 	</div>
 </template>

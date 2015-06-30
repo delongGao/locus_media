@@ -45,3 +45,8 @@ div.ui.fluid.card{
 .codetag{
   content: url("http://anniej.mit.edu/locuslens/codetag.png");
 }
+
+.comment{
+  /* TODO: need to be replaced with the real comment tag; */
+  content: url("http://anniej.mit.edu/locuslens/codetag.png");
+}

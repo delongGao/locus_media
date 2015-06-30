@@ -14,16 +14,18 @@ Template.tag.helpers({
     },
 
     tagtype: function(type){
-        if (type === "cfx"){
+        if (type === "cfx") {
             return "codetag";
-        } else if (type === "efx"){
+        } else if (type === "efx") {
             return "engtag";
-        } else if (type === "t"){
+        } else if (type === "t") {
             return "temporaltag";
-        } else if (type === "s"){
+        } else if (type === "s") {
             return "geotag";
-        } else if (type === "c"){
+        } else if (type === "c") {
             return "comment";
+        } else if (type === "general") {
+            return "gentag";
         }
     },
 
