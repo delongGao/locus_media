@@ -11,7 +11,7 @@ Template.comment.helpers({
 
   contentFormater: function(tag) {
     if (typeof tag === "object") {
-      return tag["code"] + " | " + tag["english"];
+      return "<code> - " + tag["code"] + " | <english> - " + tag["english"];
     } else {
       return tag;
     }
