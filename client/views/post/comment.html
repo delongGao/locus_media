@@ -1,6 +1,14 @@
 <template name="comment">
   <div>
-    {{ owerObj.profile.name }}: {{contentFormater tag}}
+    {{ owerObj.profile.name }}: 
+
+    <!-- placeholder just for functional tags -->
+    {{ #if isFunctionalTag tag}}
+      <i class="ui avatar image codetag inline-icon"></i> {{contentFormater tag "code"}} | 
+      <i class="ui avatar image engtag inline-icon"></i> {{contentFormater tag "english"}}
+    {{else}}
+      {{contentFormater tag null}}
+    {{/if}}
     {{ #if isOwner }}
       <i class="delete icon tag-remove"></i>
     {{ /if }}

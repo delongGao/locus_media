@@ -84,11 +84,11 @@ Template.post.events({
 		$(evt.target).parent(".menu").siblings("#tag-type-selector").attr("data-tag-type",selected_type);
         // show input field based on tag type
         if (selected_type === "functional") {
-            $("#normal_input").hide();
-            $(".functional_input").show();
+            $(evt.target).parents(".tagselect").siblings("#normal_input").hide();
+            $(evt.target).parents(".tagselect").siblings(".functional_input").show();
         } else {
-            $(".functional_input").hide();
-            $("#normal_input").show();
+            $(evt.target).parents(".tagselect").siblings(".functional_input").hide();
+            $(evt.target).parents(".tagselect").siblings("#normal_input").show();
         }
 	},
     'click .addComment': function (evt, tmpl) {

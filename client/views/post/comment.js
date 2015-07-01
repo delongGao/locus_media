@@ -9,9 +9,13 @@ Template.comment.helpers({
     return this.owner_id === Meteor.userId();
   },
 
-  contentFormater: function(tag) {
-    if (typeof tag === "object") {
-      return "<code> - " + tag["code"] + " | <english> - " + tag["english"];
+  isFunctionalTag: function(tag) {
+    return tag["code"] && tag["english"];
+  },
+
+  contentFormater: function(tag, key) {
+    if (key) {
+      return tag[key];
     } else {
       return tag;
     }
