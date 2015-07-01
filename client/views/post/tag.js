@@ -1,43 +1,33 @@
 Template.tag.helpers({
-    colorCode: function(type){
-        if (type === "cfx"){
-            return "blue";
-        } else if (type === "efx"){
-            return "red";
-        } else if (type === "t"){
-            return "teal";
-        } else if (type === "s"){
-            return "purple";
-        } else if (type === "c"){
-            return "green";
-        }
-    },
+    // colorCode: function(type){
+    //     if (type === "cfx"){
+    //         return "blue";
+    //     } else if (type === "efx"){
+    //         return "red";
+    //     } else if (type === "t"){
+    //         return "teal";
+    //     } else if (type === "s"){
+    //         return "purple";
+    //     } else if (type === "c"){
+    //         return "green";
+    //     }
+    // },
 
-    tagtype: function(type){
-        if (type === "cfx") {
-            return "codetag";
-        } else if (type === "efx") {
-            return "engtag";
-        } else if (type === "t") {
-            return "temporaltag";
-        } else if (type === "s") {
-            return "geotag";
-        } else if (type === "c") {
-            return "comment";
-        } else if (type === "general") {
-            return "gentag";
-        }
-    },
-
-    // get owner object for showing 
-    owerObj: function() {
-        // "this" is the tag object from post template
-        return Users.findOne({ _id: this.owner_id });
-    },
-
-    isOwner: function() {
-        return this.owner_id === Meteor.userId();
-    }
+    // tagtype: function(type){
+    //     if (type === "cfx") {
+    //         return "codetag";
+    //     } else if (type === "efx") {
+    //         return "engtag";
+    //     } else if (type === "t") {
+    //         return "temporaltag";
+    //     } else if (type === "s") {
+    //         return "geotag";
+    //     } else if (type === "c") {
+    //         return "comment";
+    //     } else if (type === "general") {
+    //         return "gentag";
+    //     }
+    // },
 });
 
 Template.tag.events({

@@ -38,7 +38,7 @@
 	    <!-- DIVIDER FOR COMMENTS -->
     <div class="ui horizontal divider"><i class="circular write icon button userAddComment"></i> </div>
     	<!-- TAGS -->
-    	<div class="ui tag labels">
+    	<div class="ui fluid tag labels">
 			<!-- <div class="tag removable_tag ui label label-info cfx-tag">
 		        {{tags.cfx}}
 		        <i class="delete icon tag-remove"></i>
@@ -47,10 +47,10 @@
 		        {{tags.efx}}
 		        <i class="delete icon"></i>
 		    </div> -->
-			{{#each tagObjects }}
-				{{#if tag}}
-				    {{> tag}}
-				{{/if}}
+			  {{#each tagObjects }}
+  				<!-- {{#if tag}} -->
+  				  {{> tag}}
+  				<!-- {{/if}} -->
 		    {{/each}}
 	    </div>
 
@@ -74,15 +74,20 @@
             <i class="tags icon"></i> <div class="text" id="tag-type-selector" data-tag-type="">Tag type</div>
             <i class="dropdown icon"></i>
             <div class="menu">
-              <div class="item dropdown-control" id="t-control" value="t"> <i class="temporaltag icon"></i>Temporal</div>
-              <div class="item dropdown-control" id="s-control" value="s"><i class="geotag icon"></i>TSpacial</div>
-              <div class="item dropdown-control" id="c-control" value="c"><i class="comment icon"></i>TComment</div>
-              <div class="item dropdown-control" id="g-control" value="general"><i class="gentag icon"></i>General</div>
+              <div class="item dropdown-control" id="t-control" value="functional"> <i class="functional_tag icon"></i>Functional</div>
+              <div class="item dropdown-control" id="t-control" value="temporal"> <i class="temporal_tag icon"></i>Temporal</div>
+              <div class="item dropdown-control" id="s-control" value="spacial"><i class="spacial_tag icon"></i>TSpacial</div>
+              <div class="item dropdown-control" id="c-control" value="comment"><i class="comment_tag icon"></i>TComment</div>
+              <div class="item dropdown-control" id="g-control" value="general"><i class="general_tag icon"></i>General</div>
             </div>
           </div>
         </div>
 
-        <input type="text" placeholder="add a new tag..."> 
+        <input type="text" id="normal_input" placeholder="add a new tag...">
+        <!-- <div id="new_functional_input"> -->
+        <input type="text" id="code" class="functional_input" placeholder="add a new code functional tag...">
+        <input type="text" id="english" class="functional_input" placeholder="add a new english functional tag..."> 
+        <!-- </div> -->
         <!-- <div class="ui label button " > -->
           <i class="add circle addComment link icon"></i>
         <!-- </div>  -->

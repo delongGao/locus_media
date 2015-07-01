@@ -1,0 +1,8 @@
+<template name="comment">
+  <div>
+    {{ owerObj.username }}: {{contentFormater tag}}
+    {{ #if isOwner }}
+      <i class="delete icon tag-remove"></i>
+    {{ /if }}
+  </div>
+</template>

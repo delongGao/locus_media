@@ -1,0 +1,17 @@
+.item {
+  background-color: #e8e8e8;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.item:hover {
+  background-color: #208aff;
+  color: white;
+}
+
+.avatar, .comment_container {
+  display: inline-block;
+}
+
+.item .image {
+  vertical-align: top;
+}

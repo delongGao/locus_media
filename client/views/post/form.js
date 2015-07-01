@@ -2,8 +2,8 @@ Template.form.events({
 	'submit form': function (e,tmpl) {
 		e.preventDefault();
 		$(".error-message").empty();
-		var cfx = $(tmpl.find("input[name=cfx]"));
-		var efx = $(tmpl.find("input[name=efx]"));
+		var cfx = $(tmpl.find("input[name=code]"));
+		var efx = $(tmpl.find("input[name=english]"));
 
 		var inputs = {
 			// "Title" 								: titleField.val(),
@@ -19,15 +19,14 @@ Template.form.events({
 		if (validated["pass_or_not"]) {
 			// upload image to S3
 			var files = $("#file_bag")[0].files
-	        S3.upload(files,"/" + Meteor.user().username,function(e,r){
+	      	S3.upload(files,"/" + Meteor.user().username,function(e,r){
 	            // if upload successful, save post
 	            // insert if validation passed
 				Posts.insert({
 					userId 					: Meteor.userId(),
 					imageUrl				: r.secure_url,
 					createdAt				: new Date,
-					deleted  				: false
-
+					deleted					: false
 				}, function(err, recordId) {
 					if (err) {
 						console.log("error happened for posts");
@@ -36,9 +35,9 @@ Template.form.events({
 
 						var tags = $('input.tags');
 						var tagSuccess = true;
-						$.each(tags, function(index, tag) {
-							tagSuccess = insertTags(tag, recordId, tagSuccess);
-						});
+						// $.each(tags, function(index, tag) {
+							tagSuccess = insertFunctionalTags(tags, recordId, tagSuccess);
+						// });
 
 						console.log(r);
 						// reset form
@@ -84,12 +83,15 @@ Template.form.helpers({
 });
 
 // update tags
-function insertTags(tagParams, postId, successFlag) {
-	var tagDom = $(tagParams);
+function insertFunctionalTags(tagParams, postId, successFlag) {
+	var value_obj = {};
+	$(tagParams).each(function(key, item) {
+		value_obj[$(item).attr("name")] = $(item).val();
+	})
 
 	Tags.insert({
-		type 		: tagDom.attr("name"),
-		content : tagDom.val(),
+		type 		: "functional",
+		content : value_obj,
 		userId 	: Meteor.userId(),
 		postId 	: postId,
 		deleted : false
@@ -103,4 +105,24 @@ function insertTags(tagParams, postId, successFlag) {
 		}
 	})
 }
+
+// function insertTags(tagParams, postId, successFlag) {
+// 	var tagDom = $(tagParams);
+
+// 	Tags.insert({
+// 		type 		: tagDom.attr("name"),
+// 		content : tagDom.val(),
+// 		userId 	: Meteor.userId(),
+// 		postId 	: postId,
+// 		deleted : false
+// 	}, function(err) {
+// 		if (err) {
+// 			console.log("Error occured for tags: " + err.toString());
+// 			return false;
+// 		} else {
+// 			console.log("Tags passed");
+// 			return true;
+// 		}
+// 	})
+// }
 

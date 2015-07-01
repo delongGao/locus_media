@@ -16,6 +16,10 @@
 	margin: 5px 1em;
 }
 
+.functional_input {
+  display: none;  
+}
+
 a {
 	text-decoration: none !important;
 }
@@ -25,15 +29,20 @@ div.ui.fluid.card{
     margin-top: 20px;
 }
 
-.temporaltag {
+.functional_tag {
+  /* TODO: temp placeholder; */
+  content: url("/images/default.png");
+}
+
+.temporal_tag {
   content: url("http://anniej.mit.edu/locuslens/temporaltag.png");
 }
 
-.geotag {
+.spacial_tag {
   content: url("http://anniej.mit.edu/locuslens/geotag.png");
 }
 
-.gentag {
+.general_tag {
   content: url("http://anniej.mit.edu/locuslens/gentag.png");
 }
 
@@ -46,7 +55,7 @@ div.ui.fluid.card{
   content: url("http://anniej.mit.edu/locuslens/codetag.png");
 }
 
-.comment{
+.comment_tag{
   /* TODO: need to be replaced with the real comment tag; */
   content: url("http://anniej.mit.edu/locuslens/codetag.png");
 }
