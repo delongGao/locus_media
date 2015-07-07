@@ -4,7 +4,6 @@
         <label for="search_tag_type">Select field to search</label>
         <select id="search_tag_type">
             <option value="all">All Fields</option>
-            <option value="comment">Comment Tag</option>
             <option value="functional_code">Code Functional Tag</option>
             <option value="functional_english">English Functional Tag</option>
             <option value="general">General Tags</option>
@@ -26,7 +25,6 @@
     {{/ifEsHasNoResults}}
 
     {{#ifEsInputIsEmpty index="tags" id="search-input"}}
-        <h3 class="default-results">Index of All Posts</h3>
         {{> posts}}
     {{/ifEsInputIsEmpty}}
 
