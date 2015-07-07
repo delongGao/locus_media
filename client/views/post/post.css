@@ -35,27 +35,31 @@ div.ui.fluid.card{
 }
 
 .temporal_tag {
-  content: url("http://anniej.mit.edu/locuslens/temporaltag.png");
+  content: url("/images/icons/temporaltag.png");
 }
 
 .spacial_tag {
-  content: url("http://anniej.mit.edu/locuslens/geotag.png");
+  content: url("/images/icons/geotag.png");
 }
 
 .general_tag {
-  content: url("http://anniej.mit.edu/locuslens/gentag.png");
+  content: url("/images/icons/gentag.png");
 }
 
 
 .engtag {
-  content: url("http://anniej.mit.edu/locuslens/engtag.png");
+  content: url("/images/icons/engtag.png");
 }
 
 .codetag{
-  content: url("http://anniej.mit.edu/locuslens/codetag.png");
+  content: url("/images/icons/codetag.png");
 }
 
-.comment_tag{
-  /* TODO: need to be replaced with the real comment tag; */
-  content: url("http://anniej.mit.edu/locuslens/codetag.png");
+/* icon for high-five */
+.high-five-active {
+  content: url("/images/hi5.jpg");
+}
+
+.high-five-inactive {
+  content: url("/images/hi5_unselected.jpg");
 }
