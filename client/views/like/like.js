@@ -2,9 +2,11 @@ Template.like.helpers({
 	isLiked: function (postId) {
 		var likeRecord = userLikePost(Meteor.userId(), postId);
 		if (likeRecord.like_or_not) {
-			return "";
+			return "high-five-active";
 		} else {
-			return "empty";
+			// has to return "empty" as part of the inactive class,
+			// because it's used for tracking clicked times
+			return "high-five empty";
 		}
 	}, 
 	printLikeId: function(postId) {

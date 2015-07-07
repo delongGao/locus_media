@@ -1,0 +1,15 @@
+/* style for high-five icon */
+.likes-section .toggle {
+  background-color: transparent;
+  padding: 0;
+  margin: 0 3px 0 0;
+  float: left;
+  cursor: pointer;
+}
+
+.likes-section .like-toggle {
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+}
