@@ -15,12 +15,13 @@
 
 Template.posts.helpers({
 	allPosts: function() {
-		return Posts.find();
+		// return Posts.find();
+        return Posts.find({}, {sort: {createdAt:-1}});
 	},
 	moreResults: function() {
 		// If, once the subscription is ready, we have less rows than we
 	    // asked for, we've got all the rows in the collection.
-	    return !(Posts.find().count() < Session.get("postsLimit"));
+	    return !(Posts.find({}, {sort: {createdAt:-1}}).count() < Session.get("postsLimit"));
 	}
 });
 
