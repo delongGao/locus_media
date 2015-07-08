@@ -56,10 +56,10 @@ div.ui.fluid.card{
 }
 
 /* icon for high-five */
-.high-five-active {
-  content: url("/images/hi5.jpg");
+.high-five {
+  content: url("/images/hi5_unselected.jpg");
 }
 
-.high-five-inactive {
-  content: url("/images/hi5_unselected.jpg");
+.high-five-active {
+  content: url("/images/hi5.jpg");
 }
